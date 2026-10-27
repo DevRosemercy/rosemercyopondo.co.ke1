@@ -3,16 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  
-  <!-- Primary Meta Tags -->
   <title>Rosemercy Opondo | TVETA Tutor, Developer, Designer & Author</title>
   <meta name="title" content="Rosemercy Opondo | TVETA Tutor, Developer, Designer & Author" />
   <meta name="description" content="Official platform of Rosemercy Opondo. TVETA Registered Tutor & CBET Lecturer (Home Economics), Full-Stack Software Developer, Bespoke Fashion Designer, and Author." />
   <meta name="keywords" content="Rosemercy Opondo, TVETA Tutor Kenya, CBET Home Economics, Software Developer Kenya, Fashion Designer, The Man Who Planted Trees, Rosemercy Develops" />
   <meta name="author" content="Rosemercy Opondo" />
   <meta name="theme-color" content="#2A113E" />
+  <link rel="canonical" href="https://rosemercyopondo.co.ke/" />
 
-  <!-- PWA Settings -->
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3Crect%20width='512'%20height='512'%20rx='96'%20fill='%232A113E'/%3E%3Ctext%20x='256'%20y='340'%20font-family='Georgia,serif'%20font-size='220'%20font-weight='700'%20fill='%23F3E8FF'%20text-anchor='middle'%3ERO%3C/text%3E%3C/svg%3E" />
   <link rel="apple-touch-icon" href="data:image/svg+xml;utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3Crect%20width='512'%20height='512'%20rx='96'%20fill='%232A113E'/%3E%3Ctext%20x='256'%20y='340'%20font-family='Georgia,serif'%20font-size='220'%20font-weight='700'%20fill='%23F3E8FF'%20text-anchor='middle'%3ERO%3C/text%3E%3C/svg%3E" />
@@ -21,97 +19,64 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Rosemercy Global" />
 
-  <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://rosemercyopondo.github.io/" />
+  <meta property="og:url" content="https://rosemercyopondo.co.ke/" />
   <meta property="og:title" content="Rosemercy Opondo | TVETA Tutor, Software Engineer & Author" />
   <meta property="og:description" content="Integrated educational leadership, CBET Home Economics instruction, full-stack web applications, and published literature." />
+  <meta property="og:image" content="https://rosemercyopondo.co.ke/rosemercy-portrait.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Google Fonts & FontAwesome -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Source+Sans+3:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            brandDark: '#2A113E',
-            brandPurple: '#512B58',
-            brandAccent: '#7A1CAC',
-            brandLavender: '#F3E8FF',
-            brandLightBg: '#FAF5FF',
-            brandSlate: '#2B2420',
-            brandGold: '#D97706'
+            brandDark: '#2A113E', brandPurple: '#512B58', brandAccent: '#7A1CAC',
+            brandLavender: '#F3E8FF', brandLightBg: '#FAF5FF', brandSlate: '#2B2420', brandGold: '#D97706'
           },
-          fontFamily: {
-            serif: ['Fraunces', 'Georgia', 'serif'],
-            sans: ['Source Sans 3', 'sans-serif']
-          }
+          fontFamily: { serif: ['Fraunces', 'Georgia', 'serif'], sans: ['Source Sans 3', 'sans-serif'] }
         }
       }
     }
   </script>
 
   <style>
-    body {
-      font-family: 'Source Sans 3', sans-serif;
-      color: #2B2420;
-      background-color: #FAF5FF;
-      overflow-x: hidden;
-    }
-    h1, h2, h3, h4, h5, h6, .font-heading {
-      font-family: 'Fraunces', Georgia, serif;
-    }
-    .custom-scrollbar::-webkit-scrollbar {
-      width: 6px;
-    }
-    .custom-scrollbar::-webkit-scrollbar-track {
-      background: #FAF5FF;
-    }
-    .custom-scrollbar::-webkit-scrollbar-thumb {
-      background: #7A1CAC;
-      border-radius: 3px;
-    }
-    .pwa-install-banner {
-      animation: slideUp 0.3s ease-out;
-    }
-    @keyframes slideUp {
-      from { transform: translateY(100%); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
+    body { font-family: 'Source Sans 3', sans-serif; color: #2B2420; background-color: #FAF5FF; overflow-x: hidden; }
+    h1, h2, h3, h4, h5, h6, .font-heading { font-family: 'Fraunces', Georgia, serif; }
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #FAF5FF; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #7A1CAC; border-radius: 3px; }
+    .pwa-install-banner { animation: slideUp 0.3s ease-out; }
+    @keyframes slideUp { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .admin-loading::after { content: ''; display: inline-block; width: 12px; height: 12px; margin-left: 6px; border: 2px solid #fff; border-top-color: transparent; border-radius: 50%; animation: spin 0.8s linear infinite; vertical-align: middle; }
+    @keyframes spin { to { transform: rotate(360deg); } }
   </style>
 
-  <!-- PWA: Apple touch icon (runtime PNG for iOS) + Service Worker registration -->
   <script>
     function generateAppIcon(size) {
       try {
-        const c = document.createElement('canvas');
-        c.width = c.height = size;
+        const c = document.createElement('canvas'); c.width = c.height = size;
         const ctx = c.getContext('2d');
-        ctx.fillStyle = '#2A113E';
-        ctx.fillRect(0, 0, size, size);
+        ctx.fillStyle = '#2A113E'; ctx.fillRect(0, 0, size, size);
         ctx.fillStyle = '#F3E8FF';
         ctx.font = 'bold ' + Math.round(size * 0.45) + 'px Georgia, serif';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
+        ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
         ctx.fillText('RO', size / 2, size / 2 + size * 0.02);
         return c.toDataURL('image/png');
       } catch (e) { return null; }
     }
-
     document.addEventListener('DOMContentLoaded', () => {
       const apple = document.querySelector('link[rel="apple-touch-icon"]');
-      if (apple) {
-        const url = generateAppIcon(180);
-        if (url) apple.href = url;
-      }
+      if (apple) { const url = generateAppIcon(180); if (url) apple.href = url; }
     });
-
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('sw.js').catch(err => console.info('SW not registered:', err));
@@ -119,7 +84,6 @@
     }
   </script>
 
-  <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -128,28 +92,11 @@
     "jobTitle": "TVETA Registered Tutor, Software Engineer & Author",
     "email": "rosemercyopondo0@gmail.com",
     "telephone": "+254114277839",
-    "url": "https://rosemercyopondo.github.io/",
-    "knowsAbout": [
-      "TVETA CBET Curricula",
-      "Home Economics",
-      "Food & Beverage Management",
-      "Nutrition & Dietetics",
-      "Full Stack Software Development",
-      "React",
-      "Tailwind CSS",
-      "Bespoke Fashion Design"
-    ],
+    "url": "https://rosemercyopondo.co.ke/",
+    "knowsAbout": ["TVETA CBET Curricula","Home Economics","Food & Beverage Management","Nutrition & Dietetics","Full Stack Software Development","React","Tailwind CSS","Bespoke Fashion Design"],
     "alumniOf": [
-      {
-        "@type": "EducationalOrganization",
-        "name": "Kenyatta University",
-        "description": "Bachelor of Education (Home Economics)"
-      },
-      {
-        "@type": "EducationalOrganization",
-        "name": "Moringa School",
-        "description": "Software Engineering & Generative AI"
-      }
+      { "@type": "EducationalOrganization", "name": "Kenyatta University" },
+      { "@type": "EducationalOrganization", "name": "Moringa School" }
     ]
   }
   </script>
@@ -157,7 +104,6 @@
 
 <body class="flex flex-col min-h-screen">
 
-  <!-- TOP BRAND UTILITY BAR -->
   <div class="bg-brandDark text-brandLavender text-xs py-2 px-4 border-b border-brandPurple/40">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
       <div class="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
@@ -178,7 +124,6 @@
     </div>
   </div>
 
-  <!-- NAVIGATION HEADER -->
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-purple-100 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex justify-between items-center">
       <a href="#home" onclick="navTo('home')" class="group flex items-center gap-3">
@@ -188,8 +133,6 @@
           <span class="block text-[11px] text-brandPurple font-medium tracking-wide">TVETA TUTOR · DEVELOPER · AUTHOR</span>
         </div>
       </a>
-
-      <!-- Desktop Nav Links -->
       <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-brandDark">
         <a href="#home" onclick="navTo('home')" class="nav-link hover:text-brandAccent transition py-1">Home</a>
         <a href="#educator" onclick="navTo('educator')" class="nav-link hover:text-brandAccent transition py-1">TVETA & Education</a>
@@ -199,21 +142,15 @@
         <a href="#blog" onclick="navTo('blog')" class="nav-link hover:text-brandAccent transition py-1">Articles</a>
         <a href="#contact" onclick="navTo('contact')" class="nav-link hover:text-brandAccent transition py-1">Contact</a>
       </nav>
-
-      <!-- Desktop Action CTA -->
       <div class="hidden lg:flex items-center gap-3">
         <a href="https://wa.me/254114277839?text=Hello%20Rosemercy,%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg text-xs font-semibold shadow-sm transition flex items-center gap-2">
           <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Direct
         </a>
       </div>
-
-      <!-- Mobile Menu Button -->
       <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-brandDark hover:text-brandAccent focus:outline-none" aria-label="Toggle navigation menu">
         <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
       </button>
     </div>
-
-    <!-- Mobile Slideout Menu -->
     <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-purple-100 px-4 py-4 space-y-3">
       <a href="#home" onclick="navTo('home')" class="block py-2 text-brandDark font-medium border-b border-purple-50">Home</a>
       <a href="#educator" onclick="navTo('educator')" class="block py-2 text-brandDark font-medium border-b border-purple-50">TVETA & Education</a>
@@ -230,15 +167,11 @@
     </div>
   </header>
 
-  <!-- MAIN CONTENT AREA -->
   <main class="flex-grow">
 
-    <!-- HOME SECTION -->
     <section id="sec-home" class="view-section">
-      <!-- HERO BANNER WITH PROFESSIONAL PORTRAIT -->
       <div class="bg-gradient-to-br from-brandDark via-brandPurple to-brandDark text-white py-16 md:py-20 px-4 sm:px-6 relative overflow-hidden">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10">
-          
           <div class="lg:col-span-7 space-y-6">
             <div class="inline-flex items-center gap-2 bg-purple-900/60 border border-purple-400/30 text-purple-200 px-3 py-1 rounded-full text-xs font-medium">
               <i class="fa-solid fa-award text-amber-400"></i> Registered TVETA Trainer & Tech Specialist
@@ -258,8 +191,6 @@
               </a>
             </div>
           </div>
-
-          <!-- Hero Portrait Card -->
           <div class="lg:col-span-5 flex justify-center">
             <div class="relative group max-w-sm w-full">
               <div class="absolute -inset-1 bg-gradient-to-r from-brandAccent to-purple-400 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
@@ -275,56 +206,42 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
-      <!-- 4 CORE PILLARS GRID -->
       <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
         <div class="text-center max-w-2xl mx-auto mb-12">
           <h2 class="font-heading text-2xl sm:text-3xl font-bold text-brandDark">Four Strategic Pillars</h2>
           <p class="text-gray-600 text-sm mt-2">Connecting institutional learning, full-stack software development, bespoke fashion, and literary works.</p>
         </div>
-
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div onclick="navTo('educator')" class="cursor-pointer bg-white border border-purple-100 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-brandAccent transition group flex flex-col justify-between">
             <div>
-              <div class="w-12 h-12 rounded-lg bg-purple-50 text-brandAccent flex items-center justify-center text-xl mb-4 group-hover:bg-brandAccent group-hover:text-white transition">
-                <i class="fa-solid fa-chalkboard-user"></i>
-              </div>
+              <div class="w-12 h-12 rounded-lg bg-purple-50 text-brandAccent flex items-center justify-center text-xl mb-4 group-hover:bg-brandAccent group-hover:text-white transition"><i class="fa-solid fa-chalkboard-user"></i></div>
               <h3 class="font-heading text-lg font-bold text-brandDark mb-2">TVETA & Holistic Educator</h3>
               <p class="text-gray-600 text-xs leading-relaxed mb-4">Registered TVETA Tutor delivering Home Economics CBET modules, leadership training, and secondary school sciences.</p>
             </div>
             <span class="text-xs font-semibold text-brandAccent group-hover:translate-x-1 transition inline-flex items-center gap-1">Explore Educator Portfolio <i class="fa-solid fa-arrow-right"></i></span>
           </div>
-
           <div onclick="navTo('tech')" class="cursor-pointer bg-white border border-purple-100 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-brandAccent transition group flex flex-col justify-between">
             <div>
-              <div class="w-12 h-12 rounded-lg bg-purple-50 text-brandAccent flex items-center justify-center text-xl mb-4 group-hover:bg-brandAccent group-hover:text-white transition">
-                <i class="fa-solid fa-code"></i>
-              </div>
+              <div class="w-12 h-12 rounded-lg bg-purple-50 text-brandAccent flex items-center justify-center text-xl mb-4 group-hover:bg-brandAccent group-hover:text-white transition"><i class="fa-solid fa-code"></i></div>
               <h3 class="font-heading text-lg font-bold text-brandDark mb-2">Software Development</h3>
               <p class="text-gray-600 text-xs leading-relaxed mb-4">Building custom management portals, school database architectures, web applications, and web platforms.</p>
             </div>
             <span class="text-xs font-semibold text-brandAccent group-hover:translate-x-1 transition inline-flex items-center gap-1">View Software Projects <i class="fa-solid fa-arrow-right"></i></span>
           </div>
-
           <div onclick="navTo('fashion')" class="cursor-pointer bg-white border border-purple-100 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-brandAccent transition group flex flex-col justify-between">
             <div>
-              <div class="w-12 h-12 rounded-lg bg-purple-50 text-brandAccent flex items-center justify-center text-xl mb-4 group-hover:bg-brandAccent group-hover:text-white transition">
-                <i class="fa-solid fa-shirt"></i>
-              </div>
+              <div class="w-12 h-12 rounded-lg bg-purple-50 text-brandAccent flex items-center justify-center text-xl mb-4 group-hover:bg-brandAccent group-hover:text-white transition"><i class="fa-solid fa-shirt"></i></div>
               <h3 class="font-heading text-lg font-bold text-brandDark mb-2">Bespoke Fashion</h3>
               <p class="text-gray-600 text-xs leading-relaxed mb-4">Textile science, custom pattern drafting, tailored apparel construction, and institutional design consultation.</p>
             </div>
             <span class="text-xs font-semibold text-brandAccent group-hover:translate-x-1 transition inline-flex items-center gap-1">View Fashion Catalog <i class="fa-solid fa-arrow-right"></i></span>
           </div>
-
           <div onclick="navTo('author')" class="cursor-pointer bg-white border border-purple-100 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-brandAccent transition group flex flex-col justify-between">
             <div>
-              <div class="w-12 h-12 rounded-lg bg-purple-50 text-brandAccent flex items-center justify-center text-xl mb-4 group-hover:bg-brandAccent group-hover:text-white transition">
-                <i class="fa-solid fa-book"></i>
-              </div>
+              <div class="w-12 h-12 rounded-lg bg-purple-50 text-brandAccent flex items-center justify-center text-xl mb-4 group-hover:bg-brandAccent group-hover:text-white transition"><i class="fa-solid fa-book"></i></div>
               <h3 class="font-heading text-lg font-bold text-brandDark mb-2">Published Author</h3>
               <p class="text-gray-600 text-xs leading-relaxed mb-4">Literary works including "The Man Who Planted Trees" (biography/memoir) and "In My Dreams".</p>
             </div>
@@ -333,7 +250,6 @@
         </div>
       </div>
 
-      <!-- GALLERY (admin-managed; hidden when empty) -->
       <div id="homeGallerySection" class="hidden max-w-7xl mx-auto px-4 sm:px-6 pb-16">
         <div class="text-center max-w-2xl mx-auto mb-8">
           <h2 class="font-heading text-2xl sm:text-3xl font-bold text-brandDark">Gallery</h2>
@@ -343,16 +259,13 @@
       </div>
     </section>
 
-    <!-- EDUCATOR & TVETA SECTION -->
     <section id="sec-educator" class="view-section hidden py-12 px-4 sm:px-6">
       <div class="max-w-7xl mx-auto space-y-12">
         <div class="bg-brandDark text-white rounded-2xl p-8 md:p-10 relative overflow-hidden">
           <div class="max-w-3xl relative z-10 space-y-4">
             <span class="text-xs font-semibold uppercase tracking-wider text-purple-300">TVETA Accredited Tutor & Secondary Educator</span>
             <h2 class="font-heading text-3xl sm:text-4xl font-bold">Building Confident Learners Through Competency Education</h2>
-            <p class="text-purple-100 text-sm sm:text-base leading-relaxed">
-              Combining academic excellence with character building, TVETA Competency-Based Education & Training (CBET), wellness advocacy, and youth skill mastery.
-            </p>
+            <p class="text-purple-100 text-sm sm:text-base leading-relaxed">Combining academic excellence with character building, TVETA Competency-Based Education & Training (CBET), wellness advocacy, and youth skill mastery.</p>
             <div class="pt-2 flex flex-wrap gap-3">
               <span class="bg-purple-900/80 border border-purple-500/30 text-purple-200 px-3 py-1 rounded text-xs"><i class="fa-solid fa-check text-emerald-400 mr-1"></i> B.Ed Kenyatta University</span>
               <span class="bg-purple-900/80 border border-purple-500/30 text-purple-200 px-3 py-1 rounded text-xs"><i class="fa-solid fa-check text-emerald-400 mr-1"></i> Registered TVETA Trainer & Assessor</span>
@@ -360,132 +273,45 @@
             </div>
           </div>
         </div>
-
-        <!-- TVETA LECTURING CURRICULUM CBET MODULES -->
         <div class="bg-white border border-purple-100 rounded-2xl p-6 sm:p-8 shadow-sm">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 pb-6 border-b border-purple-100">
             <div>
               <h3 class="font-heading text-xl sm:text-2xl font-bold text-brandDark">TVETA CBET Lecturing Capabilities (KNQA Level 5 & 6)</h3>
               <p class="text-gray-600 text-sm mt-1">Ready to lecture, instruct, and assess TVET Diploma and Craft Certificate courses across TVETA institutions.</p>
             </div>
-            <a href="https://wa.me/254114277839?text=Hello%20Rosemercy,%20I%20would%20like%20to%20engage%20you%20for%20a%20TVET/Institutional%20lecturing%20role." target="_blank" rel="noopener noreferrer" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-lg text-xs font-semibold shadow-sm transition inline-flex items-center gap-2 self-start md:self-auto">
-              <i class="fa-brands fa-whatsapp text-sm"></i> Hire for TVET Lecturing
-            </a>
+            <a href="https://wa.me/254114277839?text=Hello%20Rosemercy,%20I%20would%20like%20to%20engage%20you%20for%20a%20TVET/Institutional%20lecturing%20role." target="_blank" rel="noopener noreferrer" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-lg text-xs font-semibold shadow-sm transition inline-flex items-center gap-2 self-start md:self-auto"><i class="fa-brands fa-whatsapp text-sm"></i> Hire for TVET Lecturing</a>
           </div>
-
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-brandLightBg border border-purple-100 rounded-xl p-5">
-              <div class="text-brandAccent font-bold text-sm mb-2 flex items-center gap-2">
-                <i class="fa-solid fa-utensils"></i> Food & Beverage Management
-              </div>
-              <p class="text-xs text-gray-600 leading-relaxed">Culinary techniques, commercial kitchen organization, menu planning, food safety hygiene (HACCP), and large-scale meal production.</p>
-            </div>
-
-            <div class="bg-brandLightBg border border-purple-100 rounded-xl p-5">
-              <div class="text-brandAccent font-bold text-sm mb-2 flex items-center gap-2">
-                <i class="fa-solid fa-house-user"></i> Institutional & Home Management
-              </div>
-              <p class="text-xs text-gray-600 leading-relaxed">Facility management, housekeeping operations, resource allocation, equipment maintenance, and domestic budgeting practices.</p>
-            </div>
-
-            <div class="bg-brandLightBg border border-purple-100 rounded-xl p-5">
-              <div class="text-brandAccent font-bold text-sm mb-2 flex items-center gap-2">
-                <i class="fa-solid fa-apple-whole"></i> Applied Nutrition & Dietetics
-              </div>
-              <p class="text-xs text-gray-600 leading-relaxed">Maternal-child nutrition, dietary planning for special health conditions, food chemistry, preservation methods, and community health interventions.</p>
-            </div>
-
-            <div class="bg-brandLightBg border border-purple-100 rounded-xl p-5">
-              <div class="text-brandAccent font-bold text-sm mb-2 flex items-center gap-2">
-                <i class="fa-solid fa-scissors"></i> Fashion & Garment Construction
-              </div>
-              <p class="text-xs text-gray-600 leading-relaxed">Pattern drafting, garment construction techniques, textile science, apparel maintenance, and fashion business fundamentals.</p>
-            </div>
-
-            <div class="bg-brandLightBg border border-purple-100 rounded-xl p-5">
-              <div class="text-brandAccent font-bold text-sm mb-2 flex items-center gap-2">
-                <i class="fa-solid fa-users text-brandAccent"></i> Family Dynamics & Consumer Economics
-              </div>
-              <p class="text-xs text-gray-600 leading-relaxed">Child development principles, family resource management, consumer rights & protection, and financial literacy training.</p>
-            </div>
-
-            <div class="bg-brandLightBg border border-purple-100 rounded-xl p-5">
-              <div class="text-brandAccent font-bold text-sm mb-2 flex items-center gap-2">
-                <i class="fa-solid fa-clipboard-check text-brandAccent"></i> CBET Pedagogy & Assessment
-              </div>
-              <p class="text-xs text-gray-600 leading-relaxed">Competency-Based Assessment design, practical portfolio verification, TVETA CDACC standards compliance, and modern instructional delivery.</p>
-            </div>
+            <div class="bg-brandLightBg border border-purple-100 rounded-xl p-5"><div class="text-brandAccent font-bold text-sm mb-2 flex items-center gap-2"><i class="fa-solid fa-utensils"></i> Food & Beverage Management</div><p class="text-xs text-gray-600 leading-relaxed">Culinary techniques, commercial kitchen organization, menu planning, food safety hygiene (HACCP), and large-scale meal production.</p></div>
+            <div class="bg-brandLightBg border border-purple-100 rounded-xl p-5"><div class="text-brandAccent font-bold text-sm mb-2 flex items-center gap-2"><i class="fa-solid fa-house-user"></i> Institutional & Home Management</div><p class="text-xs text-gray-600 leading-relaxed">Facility management, housekeeping operations, resource allocation, equipment maintenance, and domestic budgeting practices.</p></div>
+            <div class="bg-brandLightBg border border-purple-100 rounded-xl p-5"><div class="text-brandAccent font-bold text-sm mb-2 flex items-center gap-2"><i class="fa-solid fa-apple-whole"></i> Applied Nutrition & Dietetics</div><p class="text-xs text-gray-600 leading-relaxed">Maternal-child nutrition, dietary planning for special health conditions, food chemistry, preservation methods, and community health interventions.</p></div>
+            <div class="bg-brandLightBg border border-purple-100 rounded-xl p-5"><div class="text-brandAccent font-bold text-sm mb-2 flex items-center gap-2"><i class="fa-solid fa-scissors"></i> Fashion & Garment Construction</div><p class="text-xs text-gray-600 leading-relaxed">Pattern drafting, garment construction techniques, textile science, apparel maintenance, and fashion business fundamentals.</p></div>
+            <div class="bg-brandLightBg border border-purple-100 rounded-xl p-5"><div class="text-brandAccent font-bold text-sm mb-2 flex items-center gap-2"><i class="fa-solid fa-users"></i> Family Dynamics & Consumer Economics</div><p class="text-xs text-gray-600 leading-relaxed">Child development principles, family resource management, consumer rights & protection, and financial literacy training.</p></div>
+            <div class="bg-brandLightBg border border-purple-100 rounded-xl p-5"><div class="text-brandAccent font-bold text-sm mb-2 flex items-center gap-2"><i class="fa-solid fa-clipboard-check"></i> CBET Pedagogy & Assessment</div><p class="text-xs text-gray-600 leading-relaxed">Competency-Based Assessment design, practical portfolio verification, TVETA CDACC standards compliance, and modern instructional delivery.</p></div>
           </div>
         </div>
-
-        <!-- TEACHING EXPERIENCE TIMELINE -->
         <div class="grid lg:grid-cols-12 gap-8">
           <div class="lg:col-span-7 bg-white border border-purple-100 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
             <h3 class="font-heading text-xl font-bold text-brandDark border-b border-purple-100 pb-3">Institutional Teaching Timeline</h3>
-            
             <div class="space-y-6 border-l-2 border-brandAccent/30 pl-4 ml-2">
-              <div class="relative">
-                <div class="absolute -left-[23px] top-1 w-3.5 h-3.5 rounded-full bg-brandAccent border-2 border-white"></div>
-                <span class="text-xs font-semibold text-brandAccent uppercase">2026</span>
-                <h4 class="font-heading text-base font-bold text-brandDark">Saint Germain Gatanga Girls High School</h4>
-                <p class="text-xs text-gray-600 mt-1">Biology & Home Science Instructor | Chess Head Coach & Wellness Advocate</p>
-              </div>
-
-              <div class="relative">
-                <div class="absolute -left-[23px] top-1 w-3.5 h-3.5 rounded-full bg-brandAccent border-2 border-white"></div>
-                <span class="text-xs font-semibold text-brandAccent uppercase">2025</span>
-                <h4 class="font-heading text-base font-bold text-brandDark">Nyawara Girls Senior School</h4>
-                <p class="text-xs text-gray-600 mt-1">Home Economics & Sciences Instructor | Developed digital tracking portal prototype.</p>
-              </div>
-
-              <div class="relative">
-                <div class="absolute -left-[23px] top-1 w-3.5 h-3.5 rounded-full bg-brandAccent border-2 border-white"></div>
-                <span class="text-xs font-semibold text-brandAccent uppercase">2024</span>
-                <h4 class="font-heading text-base font-bold text-brandDark">Bishop Okoth Mbaga Girls High School</h4>
-                <p class="text-xs text-gray-600 mt-1">Secondary School Academic Teacher & Awavumbuzi Innovation Mentor</p>
-              </div>
-
-              <div class="relative">
-                <div class="absolute -left-[23px] top-1 w-3.5 h-3.5 rounded-full bg-brandAccent border-2 border-white"></div>
-                <span class="text-xs font-semibold text-brandAccent uppercase">2023</span>
-                <h4 class="font-heading text-base font-bold text-brandDark">Nyamira Girls High School</h4>
-                <p class="text-xs text-gray-600 mt-1">Biology & Home Science Teaching Practicum</p>
-              </div>
+              <div class="relative"><div class="absolute -left-[23px] top-1 w-3.5 h-3.5 rounded-full bg-brandAccent border-2 border-white"></div><span class="text-xs font-semibold text-brandAccent uppercase">2026</span><h4 class="font-heading text-base font-bold text-brandDark">Saint Germain Gatanga Girls High School</h4><p class="text-xs text-gray-600 mt-1">Biology & Home Science Instructor | Chess Head Coach & Wellness Advocate</p></div>
+              <div class="relative"><div class="absolute -left-[23px] top-1 w-3.5 h-3.5 rounded-full bg-brandAccent border-2 border-white"></div><span class="text-xs font-semibold text-brandAccent uppercase">2025</span><h4 class="font-heading text-base font-bold text-brandDark">Nyawara Girls Senior School</h4><p class="text-xs text-gray-600 mt-1">Home Economics & Sciences Instructor | Developed digital tracking portal prototype.</p></div>
+              <div class="relative"><div class="absolute -left-[23px] top-1 w-3.5 h-3.5 rounded-full bg-brandAccent border-2 border-white"></div><span class="text-xs font-semibold text-brandAccent uppercase">2024</span><h4 class="font-heading text-base font-bold text-brandDark">Bishop Okoth Mbaga Girls High School</h4><p class="text-xs text-gray-600 mt-1">Secondary School Academic Teacher & Awavumbuzi Innovation Mentor</p></div>
+              <div class="relative"><div class="absolute -left-[23px] top-1 w-3.5 h-3.5 rounded-full bg-brandAccent border-2 border-white"></div><span class="text-xs font-semibold text-brandAccent uppercase">2023</span><h4 class="font-heading text-base font-bold text-brandDark">Nyamira Girls High School</h4><p class="text-xs text-gray-600 mt-1">Biology & Home Science Teaching Practicum</p></div>
             </div>
           </div>
-
-          <!-- SKILLS & EXTRACURRICULAR -->
           <div class="lg:col-span-5 bg-white border border-purple-100 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
             <h3 class="font-heading text-xl font-bold text-brandDark border-b border-purple-100 pb-3">Coaching & Programs</h3>
             <ul class="space-y-4 text-sm">
-              <li class="flex items-start gap-3">
-                <i class="fa-solid fa-chess text-brandAccent text-lg mt-0.5"></i>
-                <div>
-                  <strong class="block text-brandDark font-semibold">Chess Coaching</strong>
-                  <span class="text-xs text-gray-600 leading-relaxed">Coaching school chess teams for analytical thinking and strategic focus in competitive tournaments.</span>
-                </div>
-              </li>
-              <li class="flex items-start gap-3">
-                <i class="fa-solid fa-table-tennis-paddle-ball text-brandAccent text-lg mt-0.5"></i>
-                <div>
-                  <strong class="block text-brandDark font-semibold">Badminton Coaching</strong>
-                  <span class="text-xs text-gray-600 leading-relaxed">Promoting physical agility, sportsmanship, and student wellness through racket sports.</span>
-                </div>
-              </li>
-              <li class="flex items-start gap-3">
-                <i class="fa-solid fa-masks-theater text-brandAccent text-lg mt-0.5"></i>
-                <div>
-                  <strong class="block text-brandDark font-semibold">Music & Drama Mentorship</strong>
-                  <span class="text-xs text-gray-600 leading-relaxed">Guiding students through public speaking, stage performance, and creative expression.</span>
-                </div>
-              </li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-chess text-brandAccent text-lg mt-0.5"></i><div><strong class="block text-brandDark font-semibold">Chess Coaching</strong><span class="text-xs text-gray-600 leading-relaxed">Coaching school chess teams for analytical thinking and strategic focus in competitive tournaments.</span></div></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-table-tennis-paddle-ball text-brandAccent text-lg mt-0.5"></i><div><strong class="block text-brandDark font-semibold">Badminton Coaching</strong><span class="text-xs text-gray-600 leading-relaxed">Promoting physical agility, sportsmanship, and student wellness through racket sports.</span></div></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-masks-theater text-brandAccent text-lg mt-0.5"></i><div><strong class="block text-brandDark font-semibold">Music & Drama Mentorship</strong><span class="text-xs text-gray-600 leading-relaxed">Guiding students through public speaking, stage performance, and creative expression.</span></div></li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SOFTWARE TECH SECTION -->
     <section id="sec-tech" class="view-section hidden py-12 px-4 sm:px-6">
       <div class="max-w-7xl mx-auto space-y-12">
         <div class="bg-brandDark text-white rounded-2xl p-8 md:p-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
@@ -494,11 +320,8 @@
             <h2 class="font-heading text-3xl font-bold mt-1">Building Practical Web Solutions</h2>
             <p class="text-purple-100 text-sm mt-2 max-w-2xl">Moringa School trained engineer with expertise in React, Next.js, TypeScript, Node.js, and database architectures.</p>
           </div>
-          <a href="https://wa.me/254114277839?text=Hello%20Rosemercy,%20I%20have%20a%20software%20project%20I%20would%20like%20to%20discuss." target="_blank" rel="noopener noreferrer" class="bg-brandAccent hover:bg-purple-600 text-white font-semibold px-5 py-2.5 rounded-lg text-xs shadow transition flex items-center gap-2 whitespace-nowrap">
-            <i class="fa-brands fa-whatsapp text-sm"></i> Discuss Tech Project
-          </a>
+          <a href="https://wa.me/254114277839?text=Hello%20Rosemercy,%20I%20have%20a%20software%20project%20I%20would%20like%20to%20discuss." target="_blank" rel="noopener noreferrer" class="bg-brandAccent hover:bg-purple-600 text-white font-semibold px-5 py-2.5 rounded-lg text-xs shadow transition flex items-center gap-2 whitespace-nowrap"><i class="fa-brands fa-whatsapp text-sm"></i> Discuss Tech Project</a>
         </div>
-
         <div class="grid md:grid-cols-2 gap-8">
           <div class="bg-white border border-purple-100 rounded-2xl p-6 shadow-sm space-y-4">
             <h3 class="font-heading text-lg font-bold text-brandDark border-b border-purple-100 pb-2">Technical Skills & Technologies</h3>
@@ -515,36 +338,22 @@
               <span class="bg-purple-50 text-brandDark border border-purple-200 text-xs px-3 py-1 rounded-md font-medium">Git & GitHub</span>
             </div>
           </div>
-
           <div class="bg-white border border-purple-100 rounded-2xl p-6 shadow-sm space-y-4">
             <h3 class="font-heading text-lg font-bold text-brandDark border-b border-purple-100 pb-2">Software Certifications</h3>
             <ul class="space-y-3 text-xs text-gray-700">
-              <li class="flex items-center gap-2">
-                <i class="fa-solid fa-certificate text-brandAccent"></i>
-                <span><strong>Software Engineering Bootcamp:</strong> Moringa School (2025–2026)</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <i class="fa-solid fa-certificate text-brandAccent"></i>
-                <span><strong>Generative AI Certification:</strong> Moringa School (2026)</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <i class="fa-solid fa-certificate text-brandAccent"></i>
-                <span><strong>AWS Certified Cloud Practitioner:</strong> In Progress (2026)</span>
-              </li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-certificate text-brandAccent"></i><span><strong>Software Engineering Bootcamp:</strong> Moringa School (2025–2026)</span></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-certificate text-brandAccent"></i><span><strong>Generative AI Certification:</strong> Moringa School (2026)</span></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-certificate text-brandAccent"></i><span><strong>AWS Certified Cloud Practitioner:</strong> In Progress (2026)</span></li>
             </ul>
           </div>
         </div>
-
         <div>
           <h3 class="font-heading text-xl font-bold text-brandDark mb-6">Software Projects & Client Platforms</h3>
-          <div id="techProjectsContainer" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Dynamic Render -->
-          </div>
+          <div id="techProjectsContainer" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
         </div>
       </div>
     </section>
 
-    <!-- FASHION DESIGN SECTION -->
     <section id="sec-fashion" class="view-section hidden py-12 px-4 sm:px-6">
       <div class="max-w-7xl mx-auto space-y-12">
         <div class="bg-brandDark text-white rounded-2xl p-8 md:p-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
@@ -553,59 +362,29 @@
             <h2 class="font-heading text-3xl font-bold mt-1">Fashion Design & Tailored Wear</h2>
             <p class="text-purple-100 text-sm mt-2 max-w-2xl">Precision pattern drafting, garment construction, institutional attire design, and bespoke custom fitting.</p>
           </div>
-          <a href="https://wa.me/254114277839?text=Hello%20Rosemercy,%20I%20would%20like%20to%20order%20or%20inquire%20about%20a%20custom%20fashion%20outfit." target="_blank" rel="noopener noreferrer" class="bg-brandAccent hover:bg-purple-600 text-white font-semibold px-5 py-2.5 rounded-lg text-xs shadow transition flex items-center gap-2 whitespace-nowrap">
-            <i class="fa-brands fa-whatsapp text-sm"></i> Order Custom Outfit
-          </a>
+          <a href="https://wa.me/254114277839?text=Hello%20Rosemercy,%20I%20would%20like%20to%20order%20or%20inquire%20about%20a%20custom%20fashion%20outfit." target="_blank" rel="noopener noreferrer" class="bg-brandAccent hover:bg-purple-600 text-white font-semibold px-5 py-2.5 rounded-lg text-xs shadow transition flex items-center gap-2 whitespace-nowrap"><i class="fa-brands fa-whatsapp text-sm"></i> Order Custom Outfit</a>
         </div>
-
         <div class="grid md:grid-cols-3 gap-6">
-          <div class="bg-white border border-purple-100 rounded-2xl p-6 shadow-sm">
-            <div class="w-10 h-10 rounded-lg bg-purple-50 text-brandAccent flex items-center justify-center text-lg mb-4">
-              <i class="fa-solid fa-scissors"></i>
-            </div>
-            <h3 class="font-heading text-base font-bold text-brandDark mb-2">Pattern Drafting & Precision Fitting</h3>
-            <p class="text-gray-600 text-xs leading-relaxed">Custom body measurements transformed into flawless structural clothing patterns for personal and commercial production.</p>
-          </div>
-
-          <div class="bg-white border border-purple-100 rounded-2xl p-6 shadow-sm">
-            <div class="w-10 h-10 rounded-lg bg-purple-50 text-brandAccent flex items-center justify-center text-lg mb-4">
-              <i class="fa-solid fa-shirt"></i>
-            </div>
-            <h3 class="font-heading text-base font-bold text-brandDark mb-2">Bespoke & Executive Wear</h3>
-            <p class="text-gray-600 text-xs leading-relaxed">Elegantly designed official wear, traditional attire interpretations, and custom dresses tailored to client preferences.</p>
-          </div>
-
-          <div class="bg-white border border-purple-100 rounded-2xl p-6 shadow-sm">
-            <div class="w-10 h-10 rounded-lg bg-purple-50 text-brandAccent flex items-center justify-center text-lg mb-4">
-              <i class="fa-solid fa-graduation-cap"></i>
-            </div>
-            <h3 class="font-heading text-base font-bold text-brandDark mb-2">Institutional Uniform Design</h3>
-            <p class="text-gray-600 text-xs leading-relaxed">Durable, comfortable, and aesthetically distinct uniform concepts for schools, institutions, and corporate teams.</p>
-          </div>
+          <div class="bg-white border border-purple-100 rounded-2xl p-6 shadow-sm"><div class="w-10 h-10 rounded-lg bg-purple-50 text-brandAccent flex items-center justify-center text-lg mb-4"><i class="fa-solid fa-scissors"></i></div><h3 class="font-heading text-base font-bold text-brandDark mb-2">Pattern Drafting & Precision Fitting</h3><p class="text-gray-600 text-xs leading-relaxed">Custom body measurements transformed into flawless structural clothing patterns for personal and commercial production.</p></div>
+          <div class="bg-white border border-purple-100 rounded-2xl p-6 shadow-sm"><div class="w-10 h-10 rounded-lg bg-purple-50 text-brandAccent flex items-center justify-center text-lg mb-4"><i class="fa-solid fa-shirt"></i></div><h3 class="font-heading text-base font-bold text-brandDark mb-2">Bespoke & Executive Wear</h3><p class="text-gray-600 text-xs leading-relaxed">Elegantly designed official wear, traditional attire interpretations, and custom dresses tailored to client preferences.</p></div>
+          <div class="bg-white border border-purple-100 rounded-2xl p-6 shadow-sm"><div class="w-10 h-10 rounded-lg bg-purple-50 text-brandAccent flex items-center justify-center text-lg mb-4"><i class="fa-solid fa-graduation-cap"></i></div><h3 class="font-heading text-base font-bold text-brandDark mb-2">Institutional Uniform Design</h3><p class="text-gray-600 text-xs leading-relaxed">Durable, comfortable, and aesthetically distinct uniform concepts for schools, institutions, and corporate teams.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- AUTHOR SECTION -->
     <section id="sec-author" class="view-section hidden py-12 px-4 sm:px-6">
       <div class="max-w-7xl mx-auto space-y-12">
         <div class="bg-brandDark text-white rounded-2xl p-8 md:p-10">
           <div class="max-w-3xl space-y-3">
             <span class="text-xs font-semibold uppercase tracking-wider text-purple-300">Published Works & Stories</span>
             <h2 class="font-heading text-3xl font-bold">Literary Books & Memoirs</h2>
-            <p class="text-purple-100 text-sm leading-relaxed">
-              Explorations of family legacy, resilience, human duality, and the cognitive science of dreams through personal storytelling.
-            </p>
+            <p class="text-purple-100 text-sm leading-relaxed">Explorations of family legacy, resilience, human duality, and the cognitive science of dreams through personal storytelling.</p>
           </div>
         </div>
-
-        <div id="booksContainer" class="grid md:grid-cols-2 gap-8">
-          <!-- Dynamic Render Books -->
-        </div>
+        <div id="booksContainer" class="grid md:grid-cols-2 gap-8"></div>
       </div>
     </section>
 
-    <!-- BLOG SECTION -->
     <section id="sec-blog" class="view-section hidden py-12 px-4 sm:px-6">
       <div class="max-w-7xl mx-auto space-y-8">
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-purple-100 pb-6">
@@ -620,100 +399,40 @@
             <button onclick="filterBlog('Fashion')" class="bg-white border border-purple-200 text-brandDark px-3 py-1 rounded-md text-xs font-medium hover:border-brandAccent">Fashion</button>
           </div>
         </div>
-
-        <div id="blogGridContainer" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Dynamic Render Blog Posts -->
-        </div>
+        <div id="blogGridContainer" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
       </div>
     </section>
 
-    <!-- CONTACT SECTION -->
     <section id="sec-contact" class="view-section hidden py-12 px-4 sm:px-6">
       <div class="max-w-7xl mx-auto space-y-12">
         <div class="text-center max-w-2xl mx-auto">
           <h2 class="font-heading text-3xl font-bold text-brandDark">Get in Touch</h2>
           <p class="text-gray-600 text-sm mt-2">Whether you need TVETA lecturing, a custom web app built, bespoke apparel designed, or book inquiries, reach out directly.</p>
         </div>
-
         <div class="grid lg:grid-cols-12 gap-8 items-start">
           <div class="lg:col-span-5 space-y-4">
             <div class="bg-white border border-purple-100 rounded-xl p-6 shadow-sm space-y-4">
               <h3 class="font-heading text-lg font-bold text-brandDark border-b border-purple-100 pb-2">Direct Contact Information</h3>
-              
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-lg bg-purple-50 text-brandAccent flex items-center justify-center text-base">
-                  <i class="fa-solid fa-envelope"></i>
-                </div>
-                <div>
-                  <span class="block text-xs text-gray-500 font-medium">Primary Email</span>
-                  <a href="mailto:rosemercyopondo0@gmail.com" class="text-sm font-semibold text-brandDark hover:text-brandAccent">rosemercyopondo0@gmail.com</a>
-                </div>
-              </div>
-
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-base">
-                  <i class="fa-brands fa-whatsapp"></i>
-                </div>
-                <div>
-                  <span class="block text-xs text-gray-500 font-medium">Phone & WhatsApp</span>
-                  <a href="https://wa.me/254114277839" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-brandDark hover:text-emerald-600">+254 114 277 839</a>
-                </div>
-              </div>
-
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-lg bg-purple-50 text-brandAccent flex items-center justify-center text-base">
-                  <i class="fa-solid fa-location-dot"></i>
-                </div>
-                <div>
-                  <span class="block text-xs text-gray-500 font-medium">Location</span>
-                  <span class="text-sm font-semibold text-brandDark">Nairobi & Kiambu, Kenya</span>
-                </div>
-              </div>
+              <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-purple-50 text-brandAccent flex items-center justify-center text-base"><i class="fa-solid fa-envelope"></i></div><div><span class="block text-xs text-gray-500 font-medium">Primary Email</span><a href="mailto:rosemercyopondo0@gmail.com" class="text-sm font-semibold text-brandDark hover:text-brandAccent">rosemercyopondo0@gmail.com</a></div></div>
+              <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-base"><i class="fa-brands fa-whatsapp"></i></div><div><span class="block text-xs text-gray-500 font-medium">Phone & WhatsApp</span><a href="https://wa.me/254114277839" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-brandDark hover:text-emerald-600">+254 114 277 839</a></div></div>
+              <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-purple-50 text-brandAccent flex items-center justify-center text-base"><i class="fa-solid fa-location-dot"></i></div><div><span class="block text-xs text-gray-500 font-medium">Location</span><span class="text-sm font-semibold text-brandDark">Nairobi & Kiambu, Kenya</span></div></div>
             </div>
-
             <div class="bg-emerald-900 text-white rounded-xl p-6 space-y-3">
-              <h4 class="font-heading text-base font-bold flex items-center gap-2">
-                <i class="fa-brands fa-whatsapp text-emerald-400"></i> Instant WhatsApp Chat
-              </h4>
-              <p class="text-xs text-emerald-100 leading-relaxed">
-                Click below to start an instant message on WhatsApp regarding TVET lecturing, software projects, or book orders.
-              </p>
-              <a href="https://wa.me/254114277839?text=Hello%20Rosemercy,%20I%20am%20reaching%20out%20via%20your%20website." target="_blank" rel="noopener noreferrer" class="inline-block w-full text-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-2.5 rounded-lg text-xs transition">
-                Start WhatsApp Chat
-              </a>
+              <h4 class="font-heading text-base font-bold flex items-center gap-2"><i class="fa-brands fa-whatsapp text-emerald-400"></i> Instant WhatsApp Chat</h4>
+              <p class="text-xs text-emerald-100 leading-relaxed">Click below to start an instant message on WhatsApp regarding TVET lecturing, software projects, or book orders.</p>
+              <a href="https://wa.me/254114277839?text=Hello%20Rosemercy,%20I%20am%20reaching%20out%20via%20your%20website." target="_blank" rel="noopener noreferrer" class="inline-block w-full text-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-2.5 rounded-lg text-xs transition">Start WhatsApp Chat</a>
             </div>
           </div>
-
           <div class="lg:col-span-7 bg-white border border-purple-100 rounded-xl p-6 sm:p-8 shadow-sm">
             <h3 class="font-heading text-xl font-bold text-brandDark mb-4">Send a Message</h3>
             <form onsubmit="handleFormSubmit(event)" class="space-y-4">
               <div class="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label class="block text-xs font-semibold text-gray-700 mb-1" for="contactName">Your Name</label>
-                  <input type="text" id="contactName" required class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-brandAccent" placeholder="Enter your full name" />
-                </div>
-                <div>
-                  <label class="block text-xs font-semibold text-gray-700 mb-1" for="contactEmail">Your Email</label>
-                  <input type="email" id="contactEmail" required class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-brandAccent" placeholder="name@domain.com" />
-                </div>
+                <div><label class="block text-xs font-semibold text-gray-700 mb-1" for="contactName">Your Name</label><input type="text" id="contactName" required class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-brandAccent" placeholder="Enter your full name" /></div>
+                <div><label class="block text-xs font-semibold text-gray-700 mb-1" for="contactEmail">Your Email</label><input type="email" id="contactEmail" required class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-brandAccent" placeholder="name@domain.com" /></div>
               </div>
-              <div>
-                <label class="block text-xs font-semibold text-gray-700 mb-1" for="contactSubject">Subject / Area of Interest</label>
-                <select id="contactSubject" class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-brandAccent">
-                  <option value="TVET / Education Lecturing">TVET / Institutional Lecturing</option>
-                  <option value="Software Project">Software Development / Website</option>
-                  <option value="Bespoke Fashion">Bespoke Fashion Design</option>
-                  <option value="Book Inquiry">Book Order / Literary Inquiry</option>
-                  <option value="General">General Inquiry</option>
-                </select>
-              </div>
-              <div>
-                <label class="block text-xs font-semibold text-gray-700 mb-1" for="contactMessage">Message</label>
-                <textarea id="contactMessage" rows="4" required class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-brandAccent" placeholder="Write your message here..."></textarea>
-              </div>
-              <button type="submit" class="bg-brandDark hover:bg-brandAccent text-white font-semibold px-6 py-2.5 rounded-lg text-xs transition flex items-center gap-2">
-                <i class="fa-solid fa-paper-plane"></i> Send Message
-              </button>
+              <div><label class="block text-xs font-semibold text-gray-700 mb-1" for="contactSubject">Subject / Area of Interest</label><select id="contactSubject" class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-brandAccent"><option>TVET / Education Lecturing</option><option>Software Project</option><option>Bespoke Fashion</option><option>Book Inquiry</option><option>General</option></select></div>
+              <div><label class="block text-xs font-semibold text-gray-700 mb-1" for="contactMessage">Message</label><textarea id="contactMessage" rows="4" required class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-brandAccent" placeholder="Write your message here..."></textarea></div>
+              <button type="submit" class="bg-brandDark hover:bg-brandAccent text-white font-semibold px-6 py-2.5 rounded-lg text-xs transition flex items-center gap-2"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
             </form>
           </div>
         </div>
@@ -722,20 +441,15 @@
 
   </main>
 
-  <!-- FLOATING WHATSAPP BUTTON -->
   <a href="https://wa.me/254114277839?text=Hello%20Rosemercy,%20I%20am%20contacting%20you%20from%20your%20website." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-40 bg-emerald-600 hover:bg-emerald-700 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition transform hover:scale-110" aria-label="Chat on WhatsApp">
     <i class="fa-brands fa-whatsapp text-2xl"></i>
   </a>
 
-  <!-- PWA INSTALL BANNER BOTTOM -->
   <div id="pwaBanner" class="hidden fixed bottom-0 left-0 right-0 z-30 bg-brandDark text-white p-4 shadow-xl border-t border-purple-400/30 pwa-install-banner">
     <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
       <div class="flex items-center gap-3 text-center sm:text-left">
         <img src="rosemercy-portrait.jpg" alt="Rosemercy App" class="w-10 h-10 rounded-full object-cover border border-brandAccent shrink-0" loading="lazy" decoding="async" />
-        <div>
-          <p class="text-sm font-bold">Install Rosemercy Opondo App</p>
-          <p class="text-xs text-purple-200">Add to your home screen for instant offline access.</p>
-        </div>
+        <div><p class="text-sm font-bold">Install Rosemercy Opondo App</p><p class="text-xs text-purple-200">Add to your home screen for instant offline access.</p></div>
       </div>
       <div class="flex items-center gap-2">
         <button onclick="triggerPwaInstall()" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded text-xs font-semibold transition">Install</button>
@@ -744,50 +458,33 @@
     </div>
   </div>
 
-  <!-- ADMIN CMS MODAL -->
   <div id="adminModal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
     <div class="bg-white w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden border border-purple-100 flex flex-col max-h-[90vh]">
       <div class="bg-brandDark text-white p-4 flex justify-between items-center">
-        <h3 class="font-heading font-bold text-base flex items-center gap-2">
-          <i class="fa-solid fa-lock text-brandAccent"></i> Rosemercy Admin CMS Portal
-        </h3>
-        <button onclick="toggleAdminModal()" class="text-purple-300 hover:text-white" aria-label="Close admin panel"><i class="fa-solid fa-xmark text-lg"></i></button>
+        <h3 class="font-heading font-bold text-base flex items-center gap-2"><i class="fa-solid fa-lock text-brandAccent"></i> Rosemercy Admin CMS Portal</h3>
+        <button onclick="closeAdminModal()" class="text-purple-300 hover:text-white" aria-label="Close admin panel"><i class="fa-solid fa-xmark text-lg"></i></button>
       </div>
-      
       <div class="p-6 overflow-y-auto custom-scrollbar space-y-6 text-sm">
-        
-        <!-- LOGIN BOX -->
         <div id="adminLoginBox" class="space-y-3">
-          <p class="text-xs text-gray-600">Enter passcode to unlock the CMS and manage articles and gallery pictures.</p>
+          <p class="text-xs text-gray-600">Sign in with the admin account created in Supabase.</p>
+          <input id="adminEmail" type="email" autocomplete="username" placeholder="Admin email" class="w-full p-2 border border-purple-200 rounded text-xs focus:outline-none focus:border-brandAccent" />
           <div class="flex gap-2">
-            <input id="adminPass" type="password" autocomplete="current-password" placeholder="Enter admin passcode" class="flex-grow p-2 border border-purple-200 rounded text-xs focus:outline-none focus:border-brandAccent" onkeydown="if(event.key==='Enter'){event.preventDefault();adminLogin();}" />
-            <button onclick="adminLogin()" class="bg-brandDark text-white px-4 py-1.5 rounded text-xs font-semibold hover:bg-brandAccent transition">Unlock</button>
+            <input id="adminPass" type="password" autocomplete="current-password" placeholder="Password" class="flex-grow p-2 border border-purple-200 rounded text-xs focus:outline-none focus:border-brandAccent" onkeydown="if(event.key==='Enter'){event.preventDefault();adminLogin();}" />
+            <button onclick="adminLogin(event)" class="bg-brandDark text-white px-4 py-1.5 rounded text-xs font-semibold hover:bg-brandAccent transition">Sign In</button>
           </div>
           <p id="adminLoginMsg" class="hidden text-xs font-semibold text-red-600"></p>
           <p class="text-[10px] text-gray-500 leading-relaxed">
             <i class="fa-solid fa-shield-halved mr-1"></i>
-            Passcodes are verified as SHA-256 hashes (never stored in plaintext), with a 5-attempt brute-force lockout and a 15-minute auto-lock session. Change the default passcode in <strong>Security</strong> after first login.
+            Authentication is handled by Supabase (server-side). Content you publish here is saved to a secure database and appears to every visitor instantly.
           </p>
         </div>
-        
-        <!-- ADMIN PANEL -->
+
         <div id="adminPanel" class="hidden space-y-6">
-          
-          <!-- Session bar -->
           <div class="bg-brandDark text-white rounded-lg px-4 py-2 flex justify-between items-center">
-            <span class="text-xs"><i class="fa-solid fa-lock-open text-emerald-400 mr-1"></i> Unlocked — auto-locks after 15 minutes of inactivity.</span>
-            <button onclick="adminLogout()" class="bg-brandAccent text-white px-3 py-1 rounded text-[11px] font-semibold hover:bg-purple-600 transition">
-              <i class="fa-solid fa-right-from-bracket mr-1"></i> Lock Session
-            </button>
+            <span class="text-xs"><i class="fa-solid fa-lock-open text-emerald-400 mr-1"></i> Signed in as <span id="adminEmailDisplay" class="font-semibold"></span></span>
+            <button onclick="adminLogout()" class="bg-brandAccent text-white px-3 py-1 rounded text-[11px] font-semibold hover:bg-purple-600 transition"><i class="fa-solid fa-right-from-bracket mr-1"></i> Sign Out</button>
           </div>
-          
-          <!-- Default passcode warning -->
-          <div id="adminDefaultWarning" class="hidden bg-amber-50 border border-amber-300 text-amber-900 rounded-lg px-4 py-2.5 text-xs">
-            <i class="fa-solid fa-triangle-exclamation mr-1"></i>
-            You are still using the default passcode. Change it in the <strong>Security</strong> section below.
-          </div>
-          
-          <!-- GALLERY MANAGER -->
+
           <div class="bg-purple-50 p-4 rounded-xl border border-purple-100 space-y-3">
             <div class="flex justify-between items-center">
               <h4 class="font-bold text-brandDark text-xs uppercase tracking-wider">Gallery Pictures</h4>
@@ -795,14 +492,11 @@
             </div>
             <input id="adminGalleryCaption" type="text" placeholder="Caption (optional)" class="w-full p-2 border border-purple-200 rounded text-xs focus:outline-none focus:border-brandAccent" />
             <input id="adminGalleryFile" type="file" accept="image/*" multiple class="w-full p-1.5 border border-purple-200 rounded text-xs file:mr-2 file:px-2 file:py-1 file:rounded file:border-0 file:bg-brandDark file:text-white file:text-[10px] file:font-semibold" />
-            <p class="text-[10px] text-gray-500">Images are auto-resized (max 1000px) and compressed before being stored locally.</p>
-            <button onclick="adminAddGalleryImages()" class="bg-brandAccent text-white px-4 py-1.5 rounded text-xs font-semibold hover:bg-purple-600 transition">
-              <i class="fa-solid fa-image mr-1"></i> Upload Pictures
-            </button>
+            <p class="text-[10px] text-gray-500">Uploads go to Supabase Storage — visible to all visitors.</p>
+            <button id="adminUploadBtn" onclick="adminAddGalleryImages()" class="bg-brandAccent text-white px-4 py-1.5 rounded text-xs font-semibold hover:bg-purple-600 transition"><i class="fa-solid fa-cloud-arrow-up mr-1"></i> Upload Pictures</button>
             <div id="adminGalleryGrid" class="grid grid-cols-3 sm:grid-cols-4 gap-2 pt-2"></div>
           </div>
-          
-          <!-- ADD NEW ARTICLE -->
+
           <div class="bg-purple-50 p-4 rounded-xl border border-purple-100 space-y-3">
             <h4 class="font-bold text-brandDark text-xs uppercase tracking-wider">Add New Article</h4>
             <input type="text" id="adminBlogTitle" placeholder="Article Title" class="w-full p-2 border border-purple-200 rounded text-xs focus:outline-none focus:border-brandAccent" />
@@ -815,28 +509,25 @@
               </select>
               <input type="text" id="adminBlogDate" placeholder="Date (e.g. Sep 2026)" class="p-2 border border-purple-200 rounded text-xs focus:outline-none focus:border-brandAccent" />
             </div>
-            <textarea id="adminBlogExcerpt" placeholder="Short Summary Excerpt" rows="2" class="w-full p-2 border border-purple-200 rounded text-xs focus:outline-none focus:border-brandAccent"></textarea>
+            <textarea id="adminBlogExcerpt" placeholder="Short excerpt" rows="2" class="w-full p-2 border border-purple-200 rounded text-xs focus:outline-none focus:border-brandAccent"></textarea>
+            <textarea id="adminBlogBody" placeholder="Full article body (optional)" rows="3" class="w-full p-2 border border-purple-200 rounded text-xs focus:outline-none focus:border-brandAccent"></textarea>
             <button onclick="adminAddBlog()" class="bg-brandDark text-white px-4 py-1.5 rounded text-xs font-semibold hover:bg-brandAccent transition">Publish Article</button>
           </div>
-          
-          <!-- SECURITY -->
+
           <div class="bg-purple-50 p-4 rounded-xl border border-purple-100 space-y-3">
-            <h4 class="font-bold text-brandDark text-xs uppercase tracking-wider"><i class="fa-solid fa-key text-brandAccent mr-1"></i> Security</h4>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
-              <input id="passCurrent" type="password" autocomplete="current-password" placeholder="Current passcode" class="p-2 border border-purple-200 rounded text-xs focus:outline-none focus:border-brandAccent" />
-              <input id="passNew" type="password" autocomplete="new-password" placeholder="New passcode (min 8)" class="p-2 border border-purple-200 rounded text-xs focus:outline-none focus:border-brandAccent" />
-              <input id="passConfirm" type="password" autocomplete="new-password" placeholder="Confirm new passcode" class="p-2 border border-purple-200 rounded text-xs focus:outline-none focus:border-brandAccent" />
+            <h4 class="font-bold text-brandDark text-xs uppercase tracking-wider"><i class="fa-solid fa-key text-brandAccent mr-1"></i> Change Password</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <input id="passNew" type="password" autocomplete="new-password" placeholder="New password (min 8)" class="p-2 border border-purple-200 rounded text-xs focus:outline-none focus:border-brandAccent" />
+              <input id="passConfirm" type="password" autocomplete="new-password" placeholder="Confirm new password" class="p-2 border border-purple-200 rounded text-xs focus:outline-none focus:border-brandAccent" />
             </div>
-            <button onclick="adminChangePasscode()" class="bg-brandDark text-white px-4 py-1.5 rounded text-xs font-semibold hover:bg-brandAccent transition">Update Passcode</button>
+            <button onclick="adminChangePassword()" class="bg-brandDark text-white px-4 py-1.5 rounded text-xs font-semibold hover:bg-brandAccent transition">Update Password</button>
             <p id="passMsg" class="hidden text-xs font-semibold"></p>
           </div>
-          
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ARTICLE DETAIL MODAL -->
   <div id="articleModal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
     <div class="bg-white w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden border border-purple-100 flex flex-col max-h-[90vh]">
       <div class="bg-brandDark text-white p-4 flex justify-between items-center">
@@ -846,31 +537,24 @@
       <div class="p-6 overflow-y-auto custom-scrollbar space-y-4">
         <h2 id="articleModalTitle" class="font-heading text-2xl font-bold text-brandDark">Article Title</h2>
         <span id="articleModalDate" class="text-xs text-gray-500 block">Published Date</span>
-        <div id="articleModalBody" class="text-sm text-gray-700 leading-relaxed space-y-3 border-t border-purple-100 pt-4">
-        </div>
+        <div id="articleModalBody" class="text-sm text-gray-700 leading-relaxed space-y-3 border-t border-purple-100 pt-4"></div>
       </div>
     </div>
   </div>
 
-  <!-- GALLERY LIGHTBOX MODAL -->
   <div id="galleryLightbox" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-4">
-    <button onclick="closeGalleryLightbox()" class="absolute top-4 right-4 text-white hover:text-brandAccent text-2xl" aria-label="Close gallery image">
-      <i class="fa-solid fa-xmark"></i>
-    </button>
+    <button onclick="closeGalleryLightbox()" class="absolute top-4 right-4 text-white hover:text-brandAccent text-2xl" aria-label="Close gallery image"><i class="fa-solid fa-xmark"></i></button>
     <figure class="max-w-4xl w-full text-center">
       <img id="galleryLightboxImg" src="" alt="" class="max-h-[80vh] w-auto mx-auto rounded-lg border border-white/20 shadow-2xl">
       <figcaption id="galleryLightboxCaption" class="text-white/90 text-sm mt-3"></figcaption>
     </figure>
   </div>
 
-  <!-- FOOTER -->
   <footer class="bg-brandDark text-white border-t border-purple-900/50 mt-12 py-12 px-4 sm:px-6">
     <div class="max-w-7xl mx-auto grid md:grid-cols-12 gap-8 text-xs">
       <div class="md:col-span-5 space-y-3">
         <span class="font-heading text-xl font-bold block text-white">Rosemercy Opondo</span>
-        <p class="text-purple-200 leading-relaxed max-w-sm">
-          TVETA Registered Trainer, B.Ed (Home Economics) graduate, software developer, apparel designer, and author. Dedicated to excellence in education and technical development.
-        </p>
+        <p class="text-purple-200 leading-relaxed max-w-sm">TVETA Registered Trainer, B.Ed (Home Economics) graduate, software developer, apparel designer, and author. Dedicated to excellence in education and technical development.</p>
       </div>
       <div class="md:col-span-3 space-y-2">
         <span class="font-bold text-purple-200 uppercase tracking-wider block mb-1">Quick Links</span>
@@ -891,279 +575,267 @@
     </div>
   </footer>
 
-  <!-- CORE INTERACTIVE JAVASCRIPT ENGINE -->
   <script>
     /* ============================================================
-       ADMIN SECURITY (SHA-256 hashing + lockout + session)
+       PASTE YOUR SUPABASE CREDENTIALS HERE (from Step 1D)
        ============================================================ */
-    const ADMIN_HASH_KEY = 'ro_admin_hash';
-    const ADMIN_LOCK_KEY = 'ro_admin_lock';
-    const ADMIN_SESSION_KEY = 'ro_admin_session';
-    const DEFAULT_ADMIN_HASH = '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918'; // "admin"
-    const SESSION_MS = 15 * 60 * 1000;
-    const MAX_FAILS = 5;
-    const LOCK_MS = 60 * 1000;
+    const SUPABASE_URL = 'https://YOUR-PROJECT-REF.supabase.co';
+    const SUPABASE_ANON_KEY = 'YOUR-ANON-PUBLIC-KEY';
+    /* ============================================================ */
 
-    async function sha256Hex(str) {
-      const data = new TextEncoder().encode(str);
-      const digest = await crypto.subtle.digest('SHA-256', data);
-      return Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, '0')).join('');
-    }
+    const SUPABASE_READY = !SUPABASE_URL.includes('YOUR-PROJECT') && !SUPABASE_ANON_KEY.includes('YOUR-ANON');
+    const sb = SUPABASE_READY ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
 
-    function safeEqual(a, b) {
-      if (typeof a !== 'string' || typeof b !== 'string' || a.length !== b.length) return false;
-      let out = 0;
-      for (let i = 0; i < a.length; i++) out |= a.charCodeAt(i) ^ b.charCodeAt(i);
-      return out === 0;
-    }
-
-    function getAdminLock() {
-      try { return JSON.parse(localStorage.getItem(ADMIN_LOCK_KEY)) || { fails: 0, until: 0 }; }
-      catch (e) { return { fails: 0, until: 0 }; }
-    }
-    function setAdminLock(v) { localStorage.setItem(ADMIN_LOCK_KEY, JSON.stringify(v)); }
-
-    function adminSessionValid() {
-      const exp = parseInt(sessionStorage.getItem(ADMIN_SESSION_KEY) || '0', 10);
-      return exp > Date.now();
-    }
-    function touchAdminSession() {
-      if (adminSessionValid()) sessionStorage.setItem(ADMIN_SESSION_KEY, String(Date.now() + SESSION_MS));
-    }
-
-    /* ============================================================
-       Content state (unchanged defaults)
-       ============================================================ */
     const defaultTechProjects = [
-      {
-        title: "Nyawara Girls Web Portal Prototype",
-        tech: ["React", "TypeScript", "Tailwind"],
-        desc: "Designed and built an administration and tracking system for student academic records and digital library tracking.",
-        link: "https://wa.me/254114277839"
-      },
-      {
-        title: "Fantec Construction Client Portal",
-        tech: ["Next.js", "Node.js", "PostgreSQL"],
-        desc: "Client showcase platform and project tracking portal for engineering site management.",
-        link: "https://wa.me/254114277839"
-      },
-      {
-        title: "Gagra Medical Center Records App",
-        tech: ["React", "Express", "MongoDB"],
-        desc: "Full-stack medical patient queue and prescription management web application.",
-        link: "https://wa.me/254114277839"
-      }
+      { title: "Nyawara Girls Web Portal Prototype", tech: ["React","TypeScript","Tailwind"], desc: "Designed and built an administration and tracking system for student academic records and digital library tracking.", link: "https://wa.me/254114277839" },
+      { title: "Fantec Construction Client Portal", tech: ["Next.js","Node.js","PostgreSQL"], desc: "Client showcase platform and project tracking portal for engineering site management.", link: "https://wa.me/254114277839" },
+      { title: "Gagra Medical Center Records App", tech: ["React","Express","MongoDB"], desc: "Full-stack medical patient queue and prescription management web application.", link: "https://wa.me/254114277839" }
     ];
-
     const defaultBooks = [
-      {
-        title: "The Man Who Planted Trees",
-        subtitle: "Biography & Memoir of JMG Opondo Ogeta",
-        status: "Available Now",
-        desc: "A biographical memoir of her father told through the imagery of a tree. His enduring life lessons become deep roots, shifting seasons, and reaching branches.",
-        link: "https://wa.me/254114277839?text=Hello%20Rosemercy,%20I%20would%20like%20to%20order%20The%20Man%20Who%20Planted%20Trees."
-      },
-      {
-        title: "In My Dreams",
-        subtitle: "Cognitive Science & Childhood Dreams",
-        status: "Coming Soon",
-        desc: "An exploration into why we dream, why we forget our dreams, the childhood aspirations we held, and how to reconnect with them.",
-        link: "https://wa.me/254114277839?text=Hello%20Rosemercy,%20I%20want%20to%20pre-order%20In%20My%20Dreams."
-      }
+      { title: "The Man Who Planted Trees", subtitle: "Biography & Memoir of JMG Opondo Ogeta", status: "Available Now", desc: "A biographical memoir of her father told through the imagery of a tree. His enduring life lessons become deep roots, shifting seasons, and reaching branches.", link: "https://wa.me/254114277839?text=Hello%20Rosemercy,%20I%20would%20like%20to%20order%20The%20Man%20Who%20Planted%20Trees." },
+      { title: "In My Dreams", subtitle: "Cognitive Science & Childhood Dreams", status: "Coming Soon", desc: "An exploration into why we dream, why we forget our dreams, the childhood aspirations we held, and how to reconnect with them.", link: "https://wa.me/254114277839?text=Hello%20Rosemercy,%20I%20want%20to%20pre-order%20In%20My%20Dreams." }
     ];
-
     const defaultBlogPosts = [
-      {
-        title: "Implementing CBET Curricula in TVETA Home Economics Training",
-        category: "Education",
-        date: "September 2026",
-        excerpt: "Competency-Based Education & Training shifts the focus from theoretical rote learning to verifiable practical mastery in food science, hospitality, and garment construction.",
-        body: "TVETA institutions across Kenya are pioneering competency-driven training. In Home Economics, this means students do not merely write about food safety or pattern drafting; they demonstrate industry-standard practical execution under standardized assessment criteria."
-      },
-      {
-        title: "Building Scalable Modern Web Portals with React & Tailwind CSS",
-        category: "Tech",
-        date: "August 2026",
-        excerpt: "Lessons learned building custom administrative web applications for local Kenyan institutions and businesses.",
-        body: "When designing software systems for schools and local enterprises, simplicity and performance are paramount. Utilizing React alongside Tailwind CSS ensures fast loading times, clean component maintainability, and seamless mobile responsiveness."
-      }
+      { id: 'd1', title: "Implementing CBET Curricula in TVETA Home Economics Training", category: "Education", date: "September 2026", excerpt: "Competency-Based Education & Training shifts the focus from theoretical rote learning to verifiable practical mastery in food science, hospitality, and garment construction.", body: "TVETA institutions across Kenya are pioneering competency-driven training. In Home Economics, this means students do not merely write about food safety or pattern drafting; they demonstrate industry-standard practical execution under standardized assessment criteria." },
+      { id: 'd2', title: "Building Scalable Modern Web Portals with React & Tailwind CSS", category: "Tech", date: "August 2026", excerpt: "Lessons learned building custom administrative web applications for local Kenyan institutions and businesses.", body: "When designing software systems for schools and local enterprises, simplicity and performance are paramount. Utilizing React alongside Tailwind CSS ensures fast loading times, clean component maintainability, and seamless mobile responsiveness." }
     ];
 
-    function getStoredData(key, fallback) {
-      const data = localStorage.getItem(key);
-      return data ? JSON.parse(data) : fallback;
-    }
+    let currentPosts = defaultBlogPosts.slice();
+    let currentGallery = [];
+    let currentUser = null;
 
     function escapeHtml(str) {
-      return String(str == null ? '' : str).replace(/[&<>"']/g, s => ({
-        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-      }[s]));
+      return String(str == null ? '' : str).replace(/[&<>"']/g, s => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[s]));
     }
 
-    let currentPosts = getStoredData('ro_blog_posts', defaultBlogPosts);
-    let currentProjects = getStoredData('ro_tech_projects', defaultTechProjects);
-    let currentGallery = getStoredData('ro_gallery', []);
-
-    /* ============================================================
-       Navigation (unchanged)
-       ============================================================ */
-    function navTo(sectionId) {
-      document.querySelectorAll('.view-section').forEach(sec => sec.classList.add('hidden'));
-      const target = document.getElementById('sec-' + sectionId);
-      if (target) {
-        target.classList.remove('hidden');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-      document.getElementById('mobileMenu').classList.add('hidden');
-      document.getElementById('menuIcon').className = "fa-solid fa-bars text-xl";
+    async function loadBlogPosts() {
+      if (!sb) return defaultBlogPosts.slice();
+      const { data, error } = await sb.from('blog_posts').select('*').order('created_at', { ascending: false });
+      if (error) { console.warn('Blog load error:', error.message); return defaultBlogPosts.slice(); }
+      if (!data || data.length === 0) return defaultBlogPosts.slice();
+      return data.map(r => ({ id: r.id, title: r.title, category: r.category, date: r.date, excerpt: r.excerpt, body: r.body || r.excerpt }));
     }
 
-    function toggleMobileMenu() {
-      const menu = document.getElementById('mobileMenu');
-      const icon = document.getElementById('menuIcon');
-      menu.classList.toggle('hidden');
-      if (menu.classList.contains('hidden')) {
-        icon.className = "fa-solid fa-bars text-xl";
-      } else {
-        icon.className = "fa-solid fa-xmark text-xl";
-      }
+    async function loadGallery() {
+      if (!sb) return [];
+      const { data, error } = await sb.from('gallery_images').select('*').order('created_at', { ascending: false });
+      if (error) { console.warn('Gallery load error:', error.message); return []; }
+      return (data || []).map(r => ({
+        id: r.id, storage_path: r.storage_path, caption: r.caption || '',
+        src: sb.storage.from('gallery').getPublicUrl(r.storage_path).data.publicUrl
+      }));
     }
 
-    /* ============================================================
-       Content renderers (unchanged except gallery)
-       ============================================================ */
+    async function refreshAll() {
+      const [posts, gallery] = await Promise.all([loadBlogPosts(), loadGallery()]);
+      currentPosts = posts;
+      currentGallery = gallery;
+      renderBlogGrid();
+      renderGallery();
+      if (currentUser) renderAdminGallery();
+    }
+
     function renderTechProjects() {
-      const container = document.getElementById('techProjectsContainer');
-      container.innerHTML = currentProjects.map(p => `
+      document.getElementById('techProjectsContainer').innerHTML = defaultTechProjects.map(p => `
         <div class="bg-white border border-purple-100 rounded-xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between">
           <div>
             <h4 class="font-heading font-bold text-brandDark text-base mb-2">${p.title}</h4>
-            <div class="flex flex-wrap gap-1.5 mb-3">
-              ${p.tech.map(t => `<span class="bg-purple-50 text-brandAccent text-[10px] font-semibold px-2 py-0.5 rounded border border-purple-100">${t}</span>`).join('')}
-            </div>
+            <div class="flex flex-wrap gap-1.5 mb-3">${p.tech.map(t => `<span class="bg-purple-50 text-brandAccent text-[10px] font-semibold px-2 py-0.5 rounded border border-purple-100">${t}</span>`).join('')}</div>
             <p class="text-xs text-gray-600 leading-relaxed mb-4">${p.desc}</p>
           </div>
           <a href="${p.link}" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-brandAccent hover:underline inline-flex items-center gap-1">Inquire About Platform <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      `).join('');
+        </div>`).join('');
     }
 
     function renderBooks() {
-      const container = document.getElementById('booksContainer');
-      container.innerHTML = defaultBooks.map(b => `
+      document.getElementById('booksContainer').innerHTML = defaultBooks.map(b => `
         <div class="bg-white border border-purple-100 rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col justify-between">
           <div>
-            <div class="flex justify-between items-start mb-3">
-              <span class="text-xs font-bold px-2.5 py-1 rounded ${b.status === 'Available Now' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}">${b.status}</span>
-            </div>
+            <div class="flex justify-between items-start mb-3"><span class="text-xs font-bold px-2.5 py-1 rounded ${b.status === 'Available Now' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}">${b.status}</span></div>
             <h3 class="font-heading text-2xl font-bold text-brandDark">${b.title}</h3>
             <span class="block text-xs font-semibold text-brandAccent mt-1 mb-3">${b.subtitle}</span>
             <p class="text-xs text-gray-600 leading-relaxed mb-6">${b.desc}</p>
           </div>
-          <a href="${b.link}" target="_blank" rel="noopener noreferrer" class="w-full bg-brandDark hover:bg-brandAccent text-white text-center font-semibold py-2.5 rounded-lg text-xs transition block">
-            ${b.status === 'Available Now' ? 'Order Book via WhatsApp' : 'Express Pre-Order Interest'}
-          </a>
-        </div>
-      `).join('');
+          <a href="${b.link}" target="_blank" rel="noopener noreferrer" class="w-full bg-brandDark hover:bg-brandAccent text-white text-center font-semibold py-2.5 rounded-lg text-xs transition block">${b.status === 'Available Now' ? 'Order Book via WhatsApp' : 'Express Pre-Order Interest'}</a>
+        </div>`).join('');
     }
 
     function renderBlogGrid(filterCategory = 'All') {
-      const container = document.getElementById('blogGridContainer');
       const filtered = filterCategory === 'All' ? currentPosts : currentPosts.filter(p => p.category === filterCategory);
-      
-      container.innerHTML = filtered.map((post, idx) => `
+      document.getElementById('blogGridContainer').innerHTML = filtered.map(post => `
         <div class="bg-white border border-purple-100 rounded-xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between text-xs text-gray-500 mb-2">
-              <span class="bg-purple-50 text-brandAccent font-bold px-2 py-0.5 rounded border border-purple-100">${post.category}</span>
-              <span>${post.date}</span>
+              <span class="bg-purple-50 text-brandAccent font-bold px-2 py-0.5 rounded border border-purple-100">${escapeHtml(post.category)}</span>
+              <span>${escapeHtml(post.date)}</span>
             </div>
-            <h3 class="font-heading text-base font-bold text-brandDark mb-2">${post.title}</h3>
-            <p class="text-xs text-gray-600 leading-relaxed mb-4">${post.excerpt}</p>
+            <h3 class="font-heading text-base font-bold text-brandDark mb-2">${escapeHtml(post.title)}</h3>
+            <p class="text-xs text-gray-600 leading-relaxed mb-4">${escapeHtml(post.excerpt)}</p>
           </div>
-          <button onclick="openArticleModal(${idx})" class="text-xs font-semibold text-brandAccent hover:underline inline-flex items-center gap-1 self-start">
-            Read Full Essay <i class="fa-solid fa-arrow-right"></i>
-          </button>
-        </div>
-      `).join('');
+          <button onclick="openArticleModal('${post.id}')" class="text-xs font-semibold text-brandAccent hover:underline inline-flex items-center gap-1 self-start">Read Full Essay <i class="fa-solid fa-arrow-right"></i></button>
+        </div>`).join('');
     }
 
-    function filterBlog(category) {
-      renderBlogGrid(category);
-    }
-
-    function openArticleModal(index) {
-      const post = currentPosts[index];
-      document.getElementById('articleCategoryBadge').innerText = post.category;
-      document.getElementById('articleModalTitle').innerText = post.title;
-      document.getElementById('articleModalDate').innerText = post.date;
-      document.getElementById('articleModalBody').innerHTML = `<p>${post.excerpt}</p><p class="mt-3">${post.body}</p>`;
-      document.getElementById('articleModal').classList.remove('hidden');
-    }
-
-    function closeArticleModal() {
-      document.getElementById('articleModal').classList.add('hidden');
-    }
-
-    /* ============================================================
-       GALLERY (admin-managed pictures)
-       ============================================================ */
     function renderGallery() {
       const section = document.getElementById('homeGallerySection');
       const grid = document.getElementById('homeGalleryGrid');
-      if (!section || !grid) return;
-
-      if (!currentGallery.length) {
-        section.classList.add('hidden');
-        grid.innerHTML = '';
-        return;
-      }
-
+      if (!currentGallery.length) { section.classList.add('hidden'); grid.innerHTML = ''; return; }
       section.classList.remove('hidden');
       grid.innerHTML = currentGallery.map(g => `
         <figure class="group relative overflow-hidden rounded-xl border border-purple-100 bg-white shadow-sm hover:shadow-md transition cursor-pointer" onclick="openGalleryLightbox('${g.id}')">
-          <img src="${g.src}" alt="${escapeHtml(g.caption || 'Gallery picture')}" loading="lazy" decoding="async" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+          <img src="${escapeHtml(g.src)}" alt="${escapeHtml(g.caption || 'Gallery picture')}" loading="lazy" decoding="async" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
           ${g.caption ? `<figcaption class="px-2 py-1.5 text-[11px] text-gray-700 truncate">${escapeHtml(g.caption)}</figcaption>` : ''}
-        </figure>
-      `).join('');
+        </figure>`).join('');
     }
 
     function renderAdminGallery() {
       const grid = document.getElementById('adminGalleryGrid');
       const counter = document.getElementById('adminGalleryCount');
       if (!grid) return;
-
       if (counter) counter.textContent = currentGallery.length + ' saved';
-
-      if (!currentGallery.length) {
-        grid.innerHTML = '<p class="col-span-full text-[11px] text-gray-500">No pictures uploaded yet.</p>';
-        return;
-      }
-
+      if (!currentGallery.length) { grid.innerHTML = '<p class="col-span-full text-[11px] text-gray-500">No pictures uploaded yet.</p>'; return; }
       grid.innerHTML = currentGallery.map(g => `
         <div class="relative group rounded-lg overflow-hidden border border-purple-200 bg-white">
-          <img src="${g.src}" alt="" class="w-full h-20 object-cover">
-          <button onclick="deleteGalleryImage('${g.id}')" title="Delete picture" aria-label="Delete picture" class="absolute top-1 right-1 w-6 h-6 rounded-full bg-red-600 text-white text-[10px] flex items-center justify-center hover:bg-red-700 transition">
-            <i class="fa-solid fa-trash"></i>
-          </button>
-        </div>
-      `).join('');
+          <img src="${escapeHtml(g.src)}" alt="" class="w-full h-20 object-cover">
+          <button onclick="deleteGalleryImage('${g.id}')" title="Delete picture" aria-label="Delete picture" class="absolute top-1 right-1 w-6 h-6 rounded-full bg-red-600 text-white text-[10px] flex items-center justify-center hover:bg-red-700 transition"><i class="fa-solid fa-trash"></i></button>
+        </div>`).join('');
     }
 
-    function processImage(file, maxDim = 1000, quality = 0.78) {
+    function navTo(sectionId) {
+      document.querySelectorAll('.view-section').forEach(sec => sec.classList.add('hidden'));
+      const target = document.getElementById('sec-' + sectionId);
+      if (target) { target.classList.remove('hidden'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+      document.getElementById('mobileMenu').classList.add('hidden');
+      document.getElementById('menuIcon').className = "fa-solid fa-bars text-xl";
+    }
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu'), icon = document.getElementById('menuIcon');
+      menu.classList.toggle('hidden');
+      icon.className = menu.classList.contains('hidden') ? "fa-solid fa-bars text-xl" : "fa-solid fa-xmark text-xl";
+    }
+
+    function openArticleModal(id) {
+      const post = currentPosts.find(p => String(p.id) === String(id));
+      if (!post) return;
+      document.getElementById('articleCategoryBadge').innerText = post.category;
+      document.getElementById('articleModalTitle').innerText = post.title;
+      document.getElementById('articleModalDate').innerText = post.date;
+      document.getElementById('articleModalBody').innerHTML = `<p>${escapeHtml(post.excerpt)}</p><p class="mt-3">${escapeHtml(post.body || post.excerpt)}</p>`;
+      document.getElementById('articleModal').classList.remove('hidden');
+    }
+    function closeArticleModal() { document.getElementById('articleModal').classList.add('hidden'); }
+
+    function openGalleryLightbox(id) {
+      const item = currentGallery.find(g => String(g.id) === String(id));
+      if (!item) return;
+      document.getElementById('galleryLightboxImg').src = item.src;
+      document.getElementById('galleryLightboxImg').alt = item.caption || 'Gallery picture';
+      document.getElementById('galleryLightboxCaption').textContent = item.caption || '';
+      document.getElementById('galleryLightbox').classList.remove('hidden');
+    }
+    function closeGalleryLightbox() { document.getElementById('galleryLightbox').classList.add('hidden'); }
+
+    function toggleAdminModal() {
+      const m = document.getElementById('adminModal');
+      m.classList.contains('hidden') ? openAdminModal() : closeAdminModal();
+    }
+
+    async function openAdminModal() {
+      document.getElementById('adminModal').classList.remove('hidden');
+      document.getElementById('adminLoginMsg').classList.add('hidden');
+      if (!sb) { showAdminLogin(); setLoginMsg('Admin is not configured yet. Add your Supabase URL and anon key in index.html.'); return; }
+      const { data: { session } } = await sb.auth.getSession();
+      if (session) { currentUser = session.user; showAdminPanel(); }
+      else showAdminLogin();
+    }
+
+    function closeAdminModal() { document.getElementById('adminModal').classList.add('hidden'); }
+    function showAdminLogin() { document.getElementById('adminLoginBox').classList.remove('hidden'); document.getElementById('adminPanel').classList.add('hidden'); }
+
+    function showAdminPanel() {
+      document.getElementById('adminLoginBox').classList.add('hidden');
+      document.getElementById('adminPanel').classList.remove('hidden');
+      if (currentUser) document.getElementById('adminEmailDisplay').textContent = currentUser.email || 'admin';
+      renderAdminGallery();
+      maybeMigrateLocalData();
+    }
+
+    function setLoginMsg(msg, isError = true) {
+      const el = document.getElementById('adminLoginMsg');
+      el.textContent = msg;
+      el.className = 'text-xs font-semibold ' + (isError ? 'text-red-600' : 'text-emerald-600');
+      el.classList.remove('hidden');
+    }
+
+    async function adminLogin(evt) {
+      if (!sb) { setLoginMsg('Admin is not configured yet.'); return; }
+      const email = document.getElementById('adminEmail').value.trim();
+      const pass = document.getElementById('adminPass').value;
+      if (!email || !pass) { setLoginMsg('Enter both email and password.'); return; }
+      const btn = (evt && evt.target) || null;
+      if (btn) btn.classList.add('admin-loading');
+      const { data, error } = await sb.auth.signInWithPassword({ email, password: pass });
+      if (btn) btn.classList.remove('admin-loading');
+      if (error) { setLoginMsg(error.message); return; }
+      currentUser = data.user;
+      document.getElementById('adminPass').value = '';
+      document.getElementById('adminLoginMsg').classList.add('hidden');
+      showAdminPanel();
+    }
+
+    async function adminLogout() {
+      if (sb) await sb.auth.signOut();
+      currentUser = null;
+      showAdminLogin();
+      setLoginMsg('Signed out.', false);
+    }
+
+    async function adminChangePassword() {
+      if (!sb || !currentUser) return;
+      const np = document.getElementById('passNew').value;
+      const cf = document.getElementById('passConfirm').value;
+      const msg = document.getElementById('passMsg');
+      const show = (txt, ok) => { msg.textContent = txt; msg.className = 'text-xs font-semibold ' + (ok ? 'text-emerald-600' : 'text-red-600'); msg.classList.remove('hidden'); };
+      if (np.length < 8) return show('Password must be at least 8 characters.', false);
+      if (np !== cf) return show('Passwords do not match.', false);
+      const { error } = await sb.auth.updateUser({ password: np });
+      if (error) return show('Error: ' + error.message, false);
+      document.getElementById('passNew').value = '';
+      document.getElementById('passConfirm').value = '';
+      show('Password updated successfully.', true);
+    }
+
+    async function adminAddBlog() {
+      if (!sb || !currentUser) { alert('Please sign in first.'); return; }
+      const title = document.getElementById('adminBlogTitle').value.trim();
+      const category = document.getElementById('adminBlogCategory').value;
+      const date = document.getElementById('adminBlogDate').value.trim() || new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+      const excerpt = document.getElementById('adminBlogExcerpt').value.trim();
+      const body = document.getElementById('adminBlogBody').value.trim() || excerpt;
+      if (!title || !excerpt) { alert('Please complete title and excerpt.'); return; }
+      const { error } = await sb.from('blog_posts').insert({ title, category, date, excerpt, body });
+      if (error) { alert('Save failed: ' + error.message); return; }
+      document.getElementById('adminBlogTitle').value = '';
+      document.getElementById('adminBlogDate').value = '';
+      document.getElementById('adminBlogExcerpt').value = '';
+      document.getElementById('adminBlogBody').value = '';
+      await refreshAll();
+      alert('Article published — visible to all visitors.');
+    }
+
+    function processImageToBlob(file, maxDim = 1000, quality = 0.8) {
       return new Promise((resolve, reject) => {
         const reader = new FileReader();
         reader.onload = () => {
           const img = new Image();
           img.onload = () => {
             const scale = Math.min(1, maxDim / Math.max(img.width, img.height));
-            const width = Math.max(1, Math.round(img.width * scale));
-            const height = Math.max(1, Math.round(img.height * scale));
+            const w = Math.max(1, Math.round(img.width * scale));
+            const h = Math.max(1, Math.round(img.height * scale));
             const canvas = document.createElement('canvas');
-            canvas.width = width;
-            canvas.height = height;
-            canvas.getContext('2d').drawImage(img, 0, 0, width, height);
-            resolve(canvas.toDataURL('image/jpeg', quality));
+            canvas.width = w; canvas.height = h;
+            canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+            canvas.toBlob(b => b ? resolve(b) : reject(new Error('toBlob failed')), 'image/jpeg', quality);
           };
           img.onerror = reject;
           img.src = reader.result;
@@ -1174,233 +846,87 @@
     }
 
     async function adminAddGalleryImages() {
+      if (!sb || !currentUser) { alert('Please sign in first.'); return; }
       const fileInput = document.getElementById('adminGalleryFile');
       const captionInput = document.getElementById('adminGalleryCaption');
       const files = Array.from(fileInput.files || []);
       const caption = captionInput.value.trim();
+      if (!files.length) { alert('Please choose at least one image.'); return; }
 
-      if (!files.length) {
-        alert('Please choose at least one image file.');
-        return;
-      }
-
+      const btn = document.getElementById('adminUploadBtn');
+      btn.classList.add('admin-loading'); btn.disabled = true;
       let added = 0;
+
       for (const file of files) {
         if (!file.type.startsWith('image/')) continue;
         try {
-          const dataUrl = await processImage(file);
-          currentGallery.unshift({
-            id: String(Date.now()) + Math.random().toString(36).slice(2, 7),
-            src: dataUrl,
-            caption
-          });
+          const blob = await processImageToBlob(file);
+          const path = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}.jpg`;
+          const { error: upErr } = await sb.storage.from('gallery').upload(path, blob, { contentType: 'image/jpeg', cacheControl: '3600', upsert: false });
+          if (upErr) throw upErr;
+          const { error: dbErr } = await sb.from('gallery_images').insert({ storage_path: path, caption });
+          if (dbErr) throw dbErr;
           added++;
-        } catch (err) {
-          console.warn('Could not process image', err);
-        }
+        } catch (err) { console.warn('Upload failed:', err.message || err); }
       }
 
-      fileInput.value = '';
-      captionInput.value = '';
-
-      try {
-        localStorage.setItem('ro_gallery', JSON.stringify(currentGallery));
-      } catch (e) {
-        alert('Local storage is full. Please delete a few pictures and try again.');
-      }
-
-      touchAdminSession();
-      renderAdminGallery();
-      renderGallery();
-
-      if (added) alert(added + (added === 1 ? ' picture added.' : ' pictures added.'));
+      btn.classList.remove('admin-loading'); btn.disabled = false;
+      fileInput.value = ''; captionInput.value = '';
+      await refreshAll();
+      if (added) alert(added + (added === 1 ? ' picture uploaded.' : ' pictures uploaded.') + ' Visible to all visitors.');
+      else alert('No pictures were uploaded. Check your connection and try again.');
     }
 
-    function deleteGalleryImage(id) {
-      if (!confirm('Delete this picture permanently?')) return;
-      currentGallery = currentGallery.filter(g => String(g.id) !== String(id));
-      localStorage.setItem('ro_gallery', JSON.stringify(currentGallery));
-      touchAdminSession();
-      renderAdminGallery();
-      renderGallery();
-    }
-
-    function openGalleryLightbox(id) {
+    async function deleteGalleryImage(id) {
+      if (!sb || !currentUser) return;
+      if (!confirm('Delete this picture permanently? It will disappear for all visitors.')) return;
       const item = currentGallery.find(g => String(g.id) === String(id));
       if (!item) return;
-      document.getElementById('galleryLightboxImg').src = item.src;
-      document.getElementById('galleryLightboxImg').alt = item.caption || 'Gallery picture';
-      document.getElementById('galleryLightboxCaption').textContent = item.caption || '';
-      document.getElementById('galleryLightbox').classList.remove('hidden');
+      try {
+        if (item.storage_path) await sb.storage.from('gallery').remove([item.storage_path]);
+        await sb.from('gallery_images').delete().eq('id', id);
+        await refreshAll();
+      } catch (err) { alert('Delete failed: ' + (err.message || err)); }
     }
 
-    function closeGalleryLightbox() {
-      document.getElementById('galleryLightbox').classList.add('hidden');
-    }
+    async function maybeMigrateLocalData() {
+      const oldPosts = localStorage.getItem('ro_blog_posts');
+      const oldGallery = localStorage.getItem('ro_gallery');
+      if (!oldPosts && !oldGallery) return;
+      if (!confirm('Found content saved in this browser from the previous version. Upload it to the server now? This is a one-time migration.')) return;
 
-    /* ============================================================
-       ADMIN: modal open/close + login + panel
-       ============================================================ */
-    function toggleAdminModal() {
-      const modal = document.getElementById('adminModal');
-      if (modal.classList.contains('hidden')) {
-        openAdminModal();
-      } else {
-        closeAdminModal();
-      }
-    }
-
-    function openAdminModal() {
-      document.getElementById('adminModal').classList.remove('hidden');
-      document.getElementById('adminLoginMsg').classList.add('hidden');
-      if (adminSessionValid()) showAdminPanel();
-      else showAdminLogin();
-    }
-
-    function closeAdminModal() {
-      document.getElementById('adminModal').classList.add('hidden');
-      const p = document.getElementById('adminPass');
-      if (p) p.value = '';
-    }
-
-    function showAdminLogin() {
-      document.getElementById('adminLoginBox').classList.remove('hidden');
-      document.getElementById('adminPanel').classList.add('hidden');
-    }
-
-    function showAdminPanel() {
-      document.getElementById('adminLoginBox').classList.add('hidden');
-      document.getElementById('adminPanel').classList.remove('hidden');
-      document.getElementById('adminDefaultWarning')
-        .classList.toggle('hidden', !!localStorage.getItem(ADMIN_HASH_KEY));
-      renderAdminGallery();
-    }
-
-    function adminLogout() {
-      sessionStorage.removeItem(ADMIN_SESSION_KEY);
-      document.getElementById('adminLoginMsg').classList.add('hidden');
-      showAdminLogin();
-    }
-
-    async function adminLogin() {
-      const msg = document.getElementById('adminLoginMsg');
-      const lock = getAdminLock();
-      const now = Date.now();
-
-      if (lock.until > now) {
-        const secs = Math.ceil((lock.until - now) / 1000);
-        msg.textContent = `Too many failed attempts. Try again in ${secs}s.`;
-        msg.classList.remove('hidden');
-        return;
+      if (oldPosts) {
+        try {
+          const posts = JSON.parse(oldPosts);
+          for (const p of posts) {
+            await sb.from('blog_posts').insert({ title: p.title, category: p.category, date: p.date, excerpt: p.excerpt, body: p.body || p.excerpt });
+          }
+          localStorage.removeItem('ro_blog_posts');
+        } catch (e) { console.warn('Blog migration error', e); }
       }
 
-      const pass = document.getElementById('adminPass').value;
-      if (!pass) {
-        msg.textContent = 'Please enter the admin passcode.';
-        msg.classList.remove('hidden');
-        return;
+      if (oldGallery) {
+        try {
+          const items = JSON.parse(oldGallery);
+          for (const g of items) {
+            const res = await fetch(g.src);
+            const blob = await res.blob();
+            const path = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}.jpg`;
+            const { error: upErr } = await sb.storage.from('gallery').upload(path, blob, { contentType: 'image/jpeg' });
+            if (!upErr) await sb.from('gallery_images').insert({ storage_path: path, caption: g.caption || '' });
+          }
+          localStorage.removeItem('ro_gallery');
+        } catch (e) { console.warn('Gallery migration error', e); }
       }
 
-      if (!window.crypto || !crypto.subtle) {
-        msg.textContent = 'Secure context required. Open this site over HTTPS.';
-        msg.classList.remove('hidden');
-        return;
-      }
+      localStorage.removeItem('ro_admin_hash');
+      localStorage.removeItem('ro_admin_lock');
+      sessionStorage.removeItem('ro_admin_session');
 
-      const enteredHash = await sha256Hex(pass);
-      const storedHash = localStorage.getItem(ADMIN_HASH_KEY) || DEFAULT_ADMIN_HASH;
-
-      if (safeEqual(enteredHash, storedHash)) {
-        setAdminLock({ fails: 0, until: 0 });
-        document.getElementById('adminPass').value = '';
-        msg.classList.add('hidden');
-        sessionStorage.setItem(ADMIN_SESSION_KEY, String(Date.now() + SESSION_MS));
-        showAdminPanel();
-      } else {
-        const fails = lock.fails + 1;
-        if (fails >= MAX_FAILS) {
-          setAdminLock({ fails: 0, until: Date.now() + LOCK_MS });
-          msg.textContent = `Too many failed attempts. Locked for ${LOCK_MS / 1000} seconds.`;
-        } else {
-          setAdminLock({ fails, until: 0 });
-          msg.textContent = `Incorrect passcode. ${MAX_FAILS - fails} attempt(s) remaining.`;
-        }
-        msg.classList.remove('hidden');
-        document.getElementById('adminPass').value = '';
-      }
+      await refreshAll();
+      alert('Migration complete — content is now shared with all visitors.');
     }
 
-    async function adminChangePasscode() {
-      const current = document.getElementById('passCurrent').value;
-      const next = document.getElementById('passNew').value;
-      const confirm = document.getElementById('passConfirm').value;
-      const msg = document.getElementById('passMsg');
-
-      const storedHash = localStorage.getItem(ADMIN_HASH_KEY) || DEFAULT_ADMIN_HASH;
-
-      if (!current) {
-        msg.textContent = 'Enter your current passcode.';
-        msg.className = 'text-xs font-semibold text-red-600';
-        msg.classList.remove('hidden');
-        return;
-      }
-      if (!safeEqual(await sha256Hex(current), storedHash)) {
-        msg.textContent = 'Current passcode is incorrect.';
-        msg.className = 'text-xs font-semibold text-red-600';
-        msg.classList.remove('hidden');
-        return;
-      }
-      if (next.length < 8) {
-        msg.textContent = 'New passcode must be at least 8 characters.';
-        msg.className = 'text-xs font-semibold text-red-600';
-        msg.classList.remove('hidden');
-        return;
-      }
-      if (next !== confirm) {
-        msg.textContent = 'New passcodes do not match.';
-        msg.className = 'text-xs font-semibold text-red-600';
-        msg.classList.remove('hidden');
-        return;
-      }
-
-      localStorage.setItem(ADMIN_HASH_KEY, await sha256Hex(next));
-      document.getElementById('passCurrent').value = '';
-      document.getElementById('passNew').value = '';
-      document.getElementById('passConfirm').value = '';
-      document.getElementById('adminDefaultWarning').classList.add('hidden');
-      touchAdminSession();
-      msg.textContent = 'Passcode updated successfully.';
-      msg.className = 'text-xs font-semibold text-emerald-600';
-      msg.classList.remove('hidden');
-    }
-
-    function adminAddBlog() {
-      const title = document.getElementById('adminBlogTitle').value.trim();
-      const category = document.getElementById('adminBlogCategory').value;
-      const date = document.getElementById('adminBlogDate').value.trim() || '2026';
-      const excerpt = document.getElementById('adminBlogExcerpt').value.trim();
-
-      if (!title || !excerpt) {
-        alert('Please complete the title and excerpt fields.');
-        return;
-      }
-
-      const newPost = { title, category, date, excerpt, body: excerpt };
-      currentPosts.unshift(newPost);
-      localStorage.setItem('ro_blog_posts', JSON.stringify(currentPosts));
-      renderBlogGrid();
-      touchAdminSession();
-
-      document.getElementById('adminBlogTitle').value = '';
-      document.getElementById('adminBlogDate').value = '';
-      document.getElementById('adminBlogExcerpt').value = '';
-
-      alert('Article published successfully!');
-    }
-
-    /* ============================================================
-       Contact form (unchanged)
-       ============================================================ */
     function handleFormSubmit(e) {
       e.preventDefault();
       const name = document.getElementById('contactName').value;
@@ -1409,51 +935,31 @@
       e.target.reset();
     }
 
-    /* ============================================================
-       PWA install prompt (unchanged behaviour, now backed by real SW)
-       ============================================================ */
     let deferredPrompt;
     window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
+      e.preventDefault(); deferredPrompt = e;
       document.getElementById('pwaInstallBtn').classList.remove('hidden');
       document.getElementById('pwaBanner').classList.remove('hidden');
     });
-
     function triggerPwaInstall() {
       if (deferredPrompt) {
         deferredPrompt.prompt();
-        deferredPrompt.userChoice.then((choiceResult) => {
-          if (choiceResult.outcome === 'accepted') {
-            closePwaBanner();
-          }
-          deferredPrompt = null;
-        });
-      } else {
-        alert('To install, tap your browser menu and choose "Add to Home Screen" / "Install App".');
-      }
+        deferredPrompt.userChoice.then(r => { if (r.outcome === 'accepted') closePwaBanner(); deferredPrompt = null; });
+      } else alert('To install, tap your browser menu and choose "Add to Home Screen" / "Install App".');
     }
+    function closePwaBanner() { document.getElementById('pwaBanner').classList.add('hidden'); }
 
-    function closePwaBanner() {
-      document.getElementById('pwaBanner').classList.add('hidden');
-    }
-
-    /* ============================================================
-       Session watchdog — re-locks UI when session expires
-       ============================================================ */
-    setInterval(() => {
-      const modal = document.getElementById('adminModal');
-      if (!modal || modal.classList.contains('hidden')) return;
-      if (!adminSessionValid() && !document.getElementById('adminPanel').classList.contains('hidden')) {
-        adminLogout();
-      }
-    }, 30000);
-
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', async () => {
       renderTechProjects();
       renderBooks();
       renderBlogGrid();
       renderGallery();
+      if (sb) {
+        sb.auth.onAuthStateChange((_evt, session) => { currentUser = session ? session.user : null; });
+        await refreshAll();
+        const { data: { session } } = await sb.auth.getSession();
+        currentUser = session ? session.user : null;
+      }
     });
   </script>
 </body>
