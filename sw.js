@@ -1,5 +1,5 @@
 /* Rosemercy PWA Service Worker */
-const CACHE_NAME = 'rosemercy-pwa-v2';
+const CACHE_NAME = 'rosemercy-pwa-v3';
 const CORE_ASSETS = ['./', './index.html', './manifest.json'];
 
 self.addEventListener('install', (event) => {
@@ -27,6 +27,9 @@ self.addEventListener('fetch', (event) => {
   let url;
   try { url = new URL(event.request.url); } catch (e) { return; }
   if (url.protocol !== 'http:' && url.protocol !== 'https:') return;
+
+  // Never cache Supabase API / Storage responses — always go to network
+  if (url.hostname.endsWith('supabase.co')) return;
 
   if (event.request.mode === 'navigate') {
     event.respondWith(
